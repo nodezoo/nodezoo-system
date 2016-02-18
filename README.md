@@ -1,4 +1,8 @@
-# vidi-concorda-nodezoo-system
+# Fuge-runner
+
+- __Lead:__ [Dean McDonnell][Lead]
+- __Sponsor:__ [nearForm][]
+
 This repo contains all the required config to spin up a [Nodezoo][] system with [Vidi][] and [Concorda][] attached. To get started, clone this repo and follow the steps below.
 
 ## Install fuge
@@ -60,7 +64,7 @@ The links for each required repo are listed below,
 - [Nodezoo github][]
 - [Nodezoo npm][]
 - [Concorda][]
-- [Vidi-Dashboard][]
+- [Vidi-Dashboard][Vidi]
 
 If you have git available at the command line you can clone each repo using commands in the form,
 ```
@@ -113,6 +117,11 @@ npm run build
 
 ___Note:___ You can run infrastructure and services separately using `infrastructure.yml` or `services.yml` over `system.yml`. All three files are also compatible with `docker-compose` should you wish to run without fuge.
 
+
+## License
+Copyright (c) 2016, Dean McDonnell and other contributors.
+Licensed under [MIT][].
+
 [Nodezoo]: https://github.com/rjrodger/nodezoo
 [Nodezoo web]: https://github.com/rjrodger/nodezoo-web
 [Nodezoo info]: https://github.com/rjrodger/nodezoo-info
@@ -120,6 +129,9 @@ ___Note:___ You can run infrastructure and services separately using `infrastruc
 [Nodezoo github]: https://github.com/rjrodger/nodezoo-github
 [Nodezoo npm]: https://github.com/rjrodger/nodezoo-npm
 [Concorda]: https://github.com/nearform/concorda
-[Vidi-Dashboard]: https://github.com/nearform/vidi-dashboard
+[Lead]: https://github.com/mcdonnelldean
+[nearForm]: http://www.nearform.com/
+[Vidi]: https://github.com/vidi-insights/vidi-dashboard
+[CoC]: ./
 
 [docker]: ./
