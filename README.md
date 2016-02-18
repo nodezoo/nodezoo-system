@@ -136,6 +136,6 @@ Licensed under [MIT][].
 [Lead]: https://github.com/mcdonnelldean
 [nearForm]: http://www.nearform.com/
 [Vidi]: https://github.com/vidi-insights/vidi-dashboard
-[CoC]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
+[Code of Conduct]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
 
 [docker]: ./
