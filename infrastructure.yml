@@ -1,7 +1,3 @@
-redis:
-  image: redis
-  ports:
-    - 6379:6379
 elasticsearch:
   image: elasticsearch
   command:
@@ -9,16 +5,13 @@ elasticsearch:
   ports:
     - 9200:9200
     - 9300:9300
+
 influx:
   image: tutum/influxdb:0.9
+  environment:
+    - PRE_CREATE_DB="vidi_metrics"
+    - ADMIN_USER="metrics"
+    - INFLUXDB_INIT_PWD="metrics"
   ports:
     - 8086:8086
     - 8083:8083
-  environment:
-    - PRE_CREATE_DB="seneca_msgstats"
-    - ADMIN_USER="msgstats"
-    - INFLUXDB_INIT_PWD="msgstats"
-beanstalkd:
-  image: schickling/beanstalkd
-  ports:
-    - 11300:11300

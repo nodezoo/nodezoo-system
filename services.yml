@@ -1,35 +1,31 @@
-mesh:
-  build: ../nodezoo/
-  container_name: mesh
+nodezoo-metrics:
+  build: ../nodezoo-metrics/
+  container_name: nodezoo-metrics
 
-msgstats:
-  build: ../nodezoo/
-  container_name: msgstats
-
-github:
+nodezoo-github:
   build: ../nodezoo-github/
-  container_name: github
+  container_name: nodezoo-github
 
-info:
+nodezoo-info:
   build: ../nodezoo-info/
-  container_name: info
+  container_name: nodezoo-info
 
-npm:
+nodezoo-npm:
   build: ../nodezoo-npm/
-  container_name: npm
+  container_name: nodezoo-npm
 
-search:
+nodezoo-search:
   build: ../nodezoo-search/
-  container_name: search
+  container_name: nodezoo-search
 
-web:
+nodezoo-web:
   build: ../nodezoo-web/
-  container_name: web
+  container_name: nodezoo-web
 
-concorda:
-  build: ../concorda/
-  container_name: concorda
+concorda-web:
+  build: ../concorda-dashboard/
+  container_name: concorda-web
 
-vidi:
+vidi-web:
   build: ../vidi-dashboard/
-  container_name: vidi
+  container_name: vidi-web
