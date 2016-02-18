@@ -129,7 +129,7 @@ Licensed under [MIT][].
 [Nodezoo github]: https://github.com/rjrodger/nodezoo-github
 [Nodezoo npm]: https://github.com/rjrodger/nodezoo-npm
 [Concorda]: https://github.com/nearform/concorda
-[Vidi-Dashboard]: https://github.com/nearform/vidi-dashboard
+[Vidi-Dashboard]: https://github.com/vidi-insights/vidi-dashboard
 [Lead]: https://github.com/mcdonnelldean
 [CoC]:
 
