@@ -1,3 +1,4 @@
+![Nodezoo](https://github.com/nodezoo/nodezoo-org/blob/master/assets/logo-nodezoo.png)
 # Fuge-runner
 
 - __Lead:__ [Dean McDonnell][Lead]
