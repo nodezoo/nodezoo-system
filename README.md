@@ -1,4 +1,4 @@
-# vidi-concorda-nodezoo-system
+# Fuge-runner
 
 - __Lead:__ [Dean McDonnell][Lead]
 - __Sponsor:__ [nearForm][]
@@ -117,6 +117,11 @@ npm run build
 
 ___Note:___ You can run infrastructure and services separately using `infrastructure.yml` or `services.yml` over `system.yml`. All three files are also compatible with `docker-compose` should you wish to run without fuge.
 
+
+## License
+Copyright (c) 2016, Dean McDonnell and other contributors.
+Licensed under [MIT][].
+
 [Nodezoo]: https://github.com/rjrodger/nodezoo
 [Nodezoo web]: https://github.com/rjrodger/nodezoo-web
 [Nodezoo info]: https://github.com/rjrodger/nodezoo-info
@@ -126,5 +131,6 @@ ___Note:___ You can run infrastructure and services separately using `infrastruc
 [Concorda]: https://github.com/nearform/concorda
 [Vidi-Dashboard]: https://github.com/nearform/vidi-dashboard
 [Lead]: https://github.com/mcdonnelldean
+[CoC]:
 
 [docker]: ./
