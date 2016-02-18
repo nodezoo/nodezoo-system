@@ -1,4 +1,8 @@
 # vidi-concorda-nodezoo-system
+
+- __Lead:__ [Dean McDonnell][Lead]
+- __Sponsor:__ [nearForm][]
+
 This repo contains all the required config to spin up a [Nodezoo][] system with [Vidi][] and [Concorda][] attached. To get started, clone this repo and follow the steps below.
 
 ## Install fuge
@@ -121,5 +125,6 @@ ___Note:___ You can run infrastructure and services separately using `infrastruc
 [Nodezoo npm]: https://github.com/rjrodger/nodezoo-npm
 [Concorda]: https://github.com/nearform/concorda
 [Vidi-Dashboard]: https://github.com/nearform/vidi-dashboard
+[Lead]: https://github.com/mcdonnelldean
 
 [docker]: ./
