@@ -1,0 +1,35 @@
+mesh:
+  build: ../nodezoo/
+  container_name: mesh
+
+msgstats:
+  build: ../nodezoo/
+  container_name: msgstats
+
+github:
+  build: ../nodezoo-github/
+  container_name: github
+
+info:
+  build: ../nodezoo-info/
+  container_name: info
+
+npm:
+  build: ../nodezoo-npm/
+  container_name: npm
+
+search:
+  build: ../nodezoo-search/
+  container_name: search
+
+web:
+  build: ../nodezoo-web/
+  container_name: web
+
+concorda:
+  build: ../concorda/
+  container_name: concorda
+
+vidi:
+  build: ../vidi-dashboard/
+  container_name: vidi

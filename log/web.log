@@ -1,0 +1,29 @@
+2016-02-18T11:12:42.705Z m87nqsdoueiq/1455793962679/17434/undefined INFO	hello	Seneca/1.2.0/m87nqsdoueiq/1455793962679/17434/undefined	
+2016-02-18T11:12:42.714Z m87nqsdoueiq/1455793962679/17434/undefined DEBUG	options	{ tag: 'undefined',   idlen: 12,   timeout: 11111,   default_plugins:     { basic: true,      cluster: true,      entity: true,      'mem-store': true,      repl: true,      transport: true,      web: false },   debug:     { fragile: false,      undead: false,      print: { options: false },      act_caller: false,      short_logs: false,      callpoint: false },   strict: { result: true, fixedargs: true, add: false, find: true },   actcache: { active: false, size: 11111 },   trace: { act: false, stack: false, unknown: 'warn' },   stats: { size: 1024, interval: 60000, running: false },   deathdelay: 11111,   admin: { local: false, prefix: '/admin' },   plugin: {},   internal:     { close_signals: { SIGHUP: true, SIGTERM: true, SIGINT: true, SIGBREAK: true },      actrouter: ,      subrouter:  },   status: { interval: 60000, running: false },   zig: {},   log:     { map:        [ { level: 'all',           handler: { [Function: print] routestr: '{ level: \'fatal\' }' } } ] } }
+2016-02-18T11:12:42.733Z m87nqsdoueiq/1455793962679/17434/undefined DEBUG	ADD	(fln5q)	cmd:stats,role:seneca	action_seneca_stats	
+2016-02-18T11:12:42.734Z m87nqsdoueiq/1455793962679/17434/undefined DEBUG	ADD	(h3mz1)	cmd:close,role:seneca	action_seneca_close	
+2016-02-18T11:12:42.735Z m87nqsdoueiq/1455793962679/17434/undefined DEBUG	ADD	(mb023)	info:fatal,role:seneca	action_seneca_fatal	
+2016-02-18T11:12:42.735Z m87nqsdoueiq/1455793962679/17434/undefined DEBUG	ADD	(a3yxh)	get:options,role:seneca	action_options_get	
+2016-02-18T11:12:42.736Z m87nqsdoueiq/1455793962679/17434/undefined DEBUG	ADD	(hert9)	role:seneca,stats:true	action_seneca_stats	
+2016-02-18T11:12:42.736Z m87nqsdoueiq/1455793962679/17434/undefined DEBUG	ADD	(stkr3)	cmd:get,role:options	action_options_get	
+2016-02-18T11:12:19.078Z vbqstrlbbz5z/1455793938030/16704/undefined DEBUG	ADD	(6vrc2)	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin_definition	
+2016-02-18T11:12:19.709Z vbqstrlbbz5z/1455793938030/16704/undefined DEBUG	ADD	(wzah4)	name:seneca-xplqfj,plugin:define,role:seneca,seq:2,tag:undefined	plugin_definition	
+2016-02-18T11:12:19.939Z vbqstrlbbz5z/1455793938030/16704/undefined DEBUG	ADD	(qcut5)	name:seneca-8vqe6c,plugin:define,role:seneca,seq:3,tag:undefined	plugin_definition	
+2016-02-18T11:12:22.086Z vbqstrlbbz5z/1455793938030/16704/undefined DEBUG	ADD	(ak02k)	name:seneca-l3yibw,plugin:define,role:seneca,seq:4,tag:undefined	plugin_definition	
+2016-02-18T11:12:22.087Z vbqstrlbbz5z/1455793938030/16704/undefined DEBUG	ADD	(8oehv)	name:seneca-exlu0n,plugin:define,role:seneca,seq:5,tag:undefined	plugin_definition	
+2016-02-18T11:12:22.092Z vbqstrlbbz5z/1455793938030/16704/undefined FATAL	sys	seneca	1.2.0	vbqstrlbbz5z/1455793938030/16704/undefined	export_not_found	seneca: The export web/hapi has not been defined by a plugin.	{key:web/hapi}	-	
+/Users/isaacmahon/Desktop/newWork/nodezoo-web/node_modules/chairo/lib/index.js:58
+        return seneca.export('web/hapi')(server, options, next);
+                                        ^
+
+TypeError: seneca.export(...) is not a function
+    at Object.exports.register (/Users/isaacmahon/Desktop/newWork/nodezoo-web/node_modules/chairo/lib/index.js:58:41)
+    at Object.target [as register] (/Users/isaacmahon/Desktop/newWork/nodezoo-web/node_modules/hapi/node_modules/joi/lib/object.js:80:30)
+    at each (/Users/isaacmahon/Desktop/newWork/nodezoo-web/node_modules/hapi/lib/plugin.js:315:14)
+    at iterate (/Users/isaacmahon/Desktop/newWork/nodezoo-web/node_modules/hapi/node_modules/items/lib/index.js:36:13)
+    at Object.exports.serial (/Users/isaacmahon/Desktop/newWork/nodezoo-web/node_modules/hapi/node_modules/items/lib/index.js:39:9)
+    at module.exports.internals.Plugin.internals.Plugin.register.each [as register] (/Users/isaacmahon/Desktop/newWork/nodezoo-web/node_modules/hapi/lib/plugin.js:318:11)
+    at Object.<anonymous> (/Users/isaacmahon/Desktop/newWork/nodezoo-web/server/start.js:42:8)
+    at Module._compile (module.js:435:26)
+    at Object.Module._extensions..js (module.js:442:10)
+    at Module.load (module.js:356:32)

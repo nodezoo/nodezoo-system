@@ -1,0 +1,4 @@
+[2016-02-18 11:11:41,233][INFO ][node                     ] [Gideon] version[2.1.1], pid[1], build[40e2c53/2015-12-15T13:05:55Z]
+[2016-02-18 11:11:41,296][INFO ][node                     ] [Gideon] initializing ...
+[2016-02-18 11:11:41,696][INFO ][plugins                  ] [Gideon] loaded [], sites []
+[2016-02-18 11:11:43,483][INFO ][env                      ] [Gideon] using [1] data paths, mounts [[/usr/share/elasticsearch/data (/dev/sda1)]], net usable_space [184.3gb], net total_space [195.8gb], spins? [possibly], types [ext4]

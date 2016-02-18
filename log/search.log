@@ -1,0 +1,217 @@
+2016-02-18T11:12:33.099Z wqundko5fot1/1455793953088/17558/undefined INFO	hello	Seneca/1.2.0/wqundko5fot1/1455793953088/17558/undefined	
+2016-02-18T11:12:33.113Z wqundko5fot1/1455793953088/17558/undefined DEBUG	options	{ tag: 'undefined',   idlen: 12,   timeout: 11111,   default_plugins:     { basic: true,      cluster: true,      entity: true,      'mem-store': true,      repl: true,      transport: true,      web: true },   debug:     { fragile: false,      undead: false,      print: { options: false },      act_caller: false,      short_logs: false,      callpoint: false },   strict: { result: true, fixedargs: true, add: false, find: true },   actcache: { active: true, size: 11111 },   trace: { act: false, stack: false, unknown: 'warn' },   stats: { size: 1024, interval: 60000, running: false },   deathdelay: 11111,   admin: { local: false, prefix: '/admin' },   plugin: {},   internal:     { close_signals: { SIGHUP: true, SIGTERM: true, SIGINT: true, SIGBREAK: true },      actrouter: ,      subrouter:  },   status: { interval: 60000, running: false },   zig: {},   log:     { map:        [ { level: 'all',           handler: { [Function: print] routestr: '{ level: \'fatal\' }' } } ] } }
+2016-02-18T11:12:33.123Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(1rzjg)	cmd:stats,role:seneca	action_seneca_stats	
+2016-02-18T11:12:33.124Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(uns3u)	cmd:close,role:seneca	action_seneca_close	
+2016-02-18T11:12:33.124Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(ld7p9)	info:fatal,role:seneca	action_seneca_fatal	
+2016-02-18T11:12:33.124Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(kk0x5)	get:options,role:seneca	action_options_get	
+2016-02-18T11:12:33.125Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(72bqv)	role:seneca,stats:true	action_seneca_stats	
+2016-02-18T11:12:33.125Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(raig7)	cmd:get,role:options	action_options_get	
+2016-02-18T11:12:33.800Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(9xt9v)	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin_definition	
+2016-02-18T11:12:34.115Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(jqu0k)	name:seneca-wewzwq,plugin:define,role:seneca,seq:2,tag:undefined	plugin_definition	
+2016-02-18T11:12:34.432Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(7v07q)	name:seneca-flzhxy,plugin:define,role:seneca,seq:3,tag:undefined	plugin_definition	
+2016-02-18T11:12:36.820Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(xhjen)	name:seneca-6zfo98,plugin:define,role:seneca,seq:4,tag:undefined	plugin_definition	
+2016-02-18T11:12:39.358Z wqundko5fot1/1455793953088/17558/undefined DEBUG	ADD	(q0ce7)	name:seneca-zroy2s,plugin:define,role:seneca,seq:5,tag:undefined	plugin_definition	
+2016-02-18T11:12:19.650Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	ADD	(fajqq)	name:search,plugin:define,role:seneca,seq:6,tag:undefined	plugin_definition	
+2016-02-18T11:12:22.838Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	ADD	(8qn7r)	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin_definition	
+2016-02-18T11:12:22.840Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	IN	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	{role:seneca,plugin:define,name:basic,tag:null,seq:1}	ENTRY	(iov5m)	-	-	GATE	
+2016-02-18T11:12:22.843Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	register	init	basic		{}
+2016-02-18T11:12:22.844Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(x6ygo)	cmd:quickcode,role:basic	quickcode	
+2016-02-18T11:12:22.845Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(qzvk0)	cmd:generate_id,role:basic	generate_id	
+2016-02-18T11:12:22.846Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(0ww47)	cmd:quickcode,role:util	quickcode	
+2016-02-18T11:12:22.846Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(w065a)	cmd:generate_id,role:util	generate_id	
+2016-02-18T11:12:22.848Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(uctyn)	cmd:ensure_entity,role:basic	ensure_entity	
+2016-02-18T11:12:22.849Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(9k4qx)	cmd:define_sys_entity,role:basic	define_sys_entity	
+2016-02-18T11:12:22.849Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(3n96r)	cmd:ensure_entity,role:util	ensure_entity	
+2016-02-18T11:12:22.849Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(vv7dr)	cmd:define_sys_entity,role:util	define_sys_entity	
+2016-02-18T11:12:22.850Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(ga2zs)	cmd:set,note:true,role:basic	set	
+2016-02-18T11:12:22.851Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(asjer)	cmd:get,note:true,role:basic	get	
+2016-02-18T11:12:22.851Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(gollv)	cmd:list,note:true,role:basic	list	
+2016-02-18T11:12:22.852Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(nyfa3)	cmd:push,note:true,role:basic	push	
+2016-02-18T11:12:22.852Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(btwng)	cmd:pop,note:true,role:basic	pop	
+2016-02-18T11:12:22.852Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(7j9om)	cmd:set,note:true,role:util	set	
+2016-02-18T11:12:22.854Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(d0hrs)	cmd:get,note:true,role:util	get	
+2016-02-18T11:12:22.854Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(fzdqy)	cmd:list,note:true,role:util	list	
+2016-02-18T11:12:22.855Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(8c488)	cmd:push,note:true,role:util	push	
+2016-02-18T11:12:22.856Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	ADD	(v0dqx)	cmd:pop,note:true,role:util	pop	
+2016-02-18T11:12:22.856Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	plugin	basic       	options	set	{basic:{}}	
+2016-02-18T11:12:22.862Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	register	install	basic	{exports:[basic]}	
+2016-02-18T11:12:22.863Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	act	-	-	DEFAULT	{init:basic,tag:null}	
+2016-02-18T11:12:22.865Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	-       	OUT	zd0656b8u2gt/pxk3rxyh3610		{}	EXIT		-	-	1	-	
+2016-02-18T11:12:22.865Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	register	ready	basic	{}
+2016-02-18T11:12:22.867Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	OUT	rnoxahbujd0l/pxk3rxyh3610	name:basic,plugin:define,role:seneca,seq:1,tag:undefined	null	EXIT	(iov5m)	-	-	18509	GATE	
+2016-02-18T11:12:22.867Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	IN	f0rb2vpqt101/043vqzorrthg	name:seneca-gtx80x,plugin:define,role:seneca,seq:2,tag:undefined	{role:seneca,plugin:define,name:seneca-gtx80x,tag:null,seq:2}	ENTRY	(g1y10)	-	-	GATE	
+2016-02-18T11:12:22.868Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	f0rb2vpqt101/043vqzorrthg	name:seneca-gtx80x,plugin:define,role:seneca,seq:2,tag:undefined	register	init	seneca-gtx80x		{}
+2016-02-18T11:12:22.868Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	f0rb2vpqt101/043vqzorrthg	name:seneca-gtx80x,plugin:define,role:seneca,seq:2,tag:undefined	plugin	seneca-gtx80x	options	set	{"seneca-gtx80x":{}}	
+2016-02-18T11:12:22.871Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	f0rb2vpqt101/043vqzorrthg	name:seneca-gtx80x,plugin:define,role:seneca,seq:2,tag:undefined	register	install	entity	{exports:[]}	seneca-gtx80x
+2016-02-18T11:12:22.872Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	f0rb2vpqt101/043vqzorrthg	name:seneca-gtx80x,plugin:define,role:seneca,seq:2,tag:undefined	act	-	-	DEFAULT	{init:entity,tag:null}	
+2016-02-18T11:12:22.872Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	-       	OUT	qxqrq0ebj2ls/043vqzorrthg		{}	EXIT		-	-	0	-	
+2016-02-18T11:12:22.872Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	f0rb2vpqt101/043vqzorrthg	name:seneca-gtx80x,plugin:define,role:seneca,seq:2,tag:undefined	register	ready	entity	{}
+2016-02-18T11:12:22.872Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	OUT	f0rb2vpqt101/043vqzorrthg	name:seneca-gtx80x,plugin:define,role:seneca,seq:2,tag:undefined	null	EXIT	(g1y10)	-	-	18197	GATE	
+2016-02-18T11:12:22.873Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	IN	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	{role:seneca,plugin:define,name:seneca-c4djaa,tag:null,seq:3}	ENTRY	(wmgfr)	-	-	GATE	
+2016-02-18T11:12:22.873Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	register	init	seneca-c4djaa		{}
+2016-02-18T11:12:22.877Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(jpaif)	cmd:save,role:entity		
+2016-02-18T11:12:22.879Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(fan0f)	cmd:load,role:entity		
+2016-02-18T11:12:22.890Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(cyidv)	cmd:list,role:entity		
+2016-02-18T11:12:22.891Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(luv3i)	cmd:remove,role:entity		
+2016-02-18T11:12:22.901Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(ja78z)	cmd:close,role:seneca		
+2016-02-18T11:12:22.902Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(cq0ep)	cmd:native,role:entity		
+2016-02-18T11:12:22.903Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(vumsw)	cmd:dump,role:mem-store		
+2016-02-18T11:12:22.905Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(gs6wn)	cmd:export,role:mem-store		
+2016-02-18T11:12:22.906Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(5h9a4)	cmd:import,role:mem-store		
+2016-02-18T11:12:22.907Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	ADD	(55dlk)	init:mem-store		
+2016-02-18T11:12:22.909Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	plugin	seneca-c4djaa	options	set	{"seneca-c4djaa":{}}	
+2016-02-18T11:12:22.920Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	register	install	mem-store/1	{exports:[mem-store/1/native]}	seneca-c4djaa
+2016-02-18T11:12:22.920Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	mem-store/1	IN	4p8lts6e3vo7/9hrcuhhypthc	init:mem-store	{init:mem-store,tag:1}	ENTRY	(55dlk)	-	-	-	
+2016-02-18T11:12:22.921Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	mem-store/1	OUT	4p8lts6e3vo7/9hrcuhhypthc	init:mem-store	null	EXIT	(55dlk)	-	-	1	-	
+2016-02-18T11:12:22.921Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	register	ready	mem-store$1	
+2016-02-18T11:12:22.922Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	OUT	4vzxdo4xkbw1/9hrcuhhypthc	name:seneca-c4djaa,plugin:define,role:seneca,seq:3,tag:undefined	null	EXIT	(wmgfr)	-	-	18049	GATE	
+2016-02-18T11:12:22.922Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	IN	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	{role:seneca,plugin:define,name:seneca-mzkjwm,tag:null,seq:4}	ENTRY	(t1k66)	-	-	GATE	
+2016-02-18T11:12:22.923Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	register	init	seneca-mzkjwm		{}
+2016-02-18T11:12:22.924Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(e41d6)	cmd:inflight,role:transport		
+2016-02-18T11:12:22.924Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(ubtrg)	cmd:listen,role:transport		
+2016-02-18T11:12:22.924Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(bfwlj)	cmd:client,role:transport		
+2016-02-18T11:12:22.925Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(s8d1c)	hook:listen,role:transport,type:tcp		
+2016-02-18T11:12:22.926Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(eg6c6)	hook:client,role:transport,type:tcp		
+2016-02-18T11:12:22.927Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(zwuba)	hook:listen,role:transport,type:web		
+2016-02-18T11:12:22.928Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(po27w)	hook:client,role:transport,type:web		
+2016-02-18T11:12:22.929Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(132ld)	hook:listen,role:transport,type:http		
+2016-02-18T11:12:22.929Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(c7epw)	hook:client,role:transport,type:http		
+2016-02-18T11:12:22.930Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(xw6f4)	hook:listen,role:transport,type:direct		
+2016-02-18T11:12:22.930Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	ADD	(x0fds)	hook:client,role:transport,type:direct		
+2016-02-18T11:12:22.931Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	seneca-mzkjwm	options	set	{"seneca-mzkjwm":{msgprefix:seneca_,callmax:111111,msgidlen:12,warn:{unknown_message_id:true,invalid_kind:true,	
+2016-02-18T11:12:22.936Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	register	install	transport	{exports:[transport/utils]}	seneca-mzkjwm
+2016-02-18T11:12:22.937Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	act	-	-	DEFAULT	{init:transport,tag:null}	
+2016-02-18T11:12:22.937Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	-       	OUT	sqnx0dxm0cxx/3j7vv33r38ir		{}	EXIT		-	-	0	-	
+2016-02-18T11:12:22.939Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	register	ready	transport	{}
+2016-02-18T11:12:22.939Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	OUT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	null	EXIT	(t1k66)	-	-	15185	GATE	
+2016-02-18T11:12:22.940Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	IN	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	{role:seneca,plugin:define,name:seneca-2xg3yf,tag:null,seq:5}	ENTRY	(f1tl7)	-	-	GATE	
+2016-02-18T11:12:22.941Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	register	init	seneca-2xg3yf		{}
+2016-02-18T11:12:22.949Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(r5woa)	role:web	web_use	
+2016-02-18T11:12:22.950Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(n6psn)	list:service,role:web	list_service	
+2016-02-18T11:12:22.951Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(p64cv)	list:route,role:web	list_route	
+2016-02-18T11:12:22.952Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(4ncmw)	role:web,stats:true	action_stats	
+2016-02-18T11:12:22.953Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(hoi5m)	get:config,role:web	get_config	
+2016-02-18T11:12:22.954Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(zu5yp)	role:web,set:source	set_source	
+2016-02-18T11:12:22.955Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(hyoe4)	get:sourcelist,role:web	get_sourcelist	
+2016-02-18T11:12:22.957Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(qsawt)	do:startware,role:web	default_startware	
+2016-02-18T11:12:22.958Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(eslug)	get:server,role:web	get_server	
+2016-02-18T11:12:22.959Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(572ap)	get:restriction,role:web	default_get_restriction	
+2016-02-18T11:12:22.960Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(k77gt)	role:web,set:framework	set_framework	
+2016-02-18T11:12:22.960Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(05111)	handle:response,role:web	handle_response	
+2016-02-18T11:12:22.962Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	ADD	(bc3yi)	init:web		
+2016-02-18T11:12:22.962Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	plugin	seneca-2xg3yf	options	set	{"seneca-2xg3yf":{}}	
+2016-02-18T11:12:22.968Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	register	install	web	{exports:[web,web/httprouter,web/hapi]}	seneca-2xg3yf
+2016-02-18T11:12:22.969Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	web       	IN	dkboc9u99ezo/892i539w8k41	init:web	{init:web,tag:null}	ENTRY	(bc3yi)	-	-	-	
+2016-02-18T11:12:22.973Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	web       	OUT	dkboc9u99ezo/892i539w8k41	init:web	null	EXIT	(bc3yi)	-	-	4	-	
+2016-02-18T11:12:22.973Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	register	ready	web	
+2016-02-18T11:12:22.973Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	OUT	s2s06qu6hdwe/892i539w8k41	name:seneca-2xg3yf,plugin:define,role:seneca,seq:5,tag:undefined	null	EXIT	(f1tl7)	-	-	11538	GATE	
+2016-02-18T11:12:22.978Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	web       	IN	y7gkybg9a4yg/892i539w8k41	role:web	{role:web,plugin:web,config:{prefix:/seneca}}	ENTRY	(r5woa)	-	-	-	
+2016-02-18T11:12:22.979Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	web       	OUT	y7gkybg9a4yg/892i539w8k41	role:web	null	EXIT	(r5woa)	-	-	9	-	
+2016-02-18T11:12:22.980Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	basic       	IN	ele14jaek5f2/892i539w8k41	cmd:push,note:true,role:basic	{role:basic,note:true,cmd:push,key:admin/units,value:{unit:web-service,spec:{title:Web Services,ng:{}},content:	ENTRY	(nyfa3)	-	-	-	
+2016-02-18T11:12:22.981Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	basic       	OUT	ele14jaek5f2/892i539w8k41	cmd:push,note:true,role:basic	null	EXIT	(nyfa3)	-	-	9	-	
+2016-02-18T11:12:22.981Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	IN	xuy4w51ol2v8/1qw3bp7jxzw2	name:search,plugin:define,role:seneca,seq:6,tag:undefined	{role:seneca,plugin:define,name:search,tag:null,seq:6}	ENTRY	(fajqq)	-	-	GATE	
+2016-02-18T11:12:22.982Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	xuy4w51ol2v8/1qw3bp7jxzw2	name:search,plugin:define,role:seneca,seq:6,tag:undefined	register	init	search		{elastic:{host:localhost}}
+2016-02-18T11:12:22.990Z lbp0ea19t1ly/1455793923232/16824/undefined ERROR	act	root$       	OUT		name:search,plugin:define,role:seneca,seq:6,tag:undefined	3337	{role:seneca,plugin:define,name:search,tag:null,seq:6}	ENTRY	(fajqq)	GATE	seneca: Action name:search,plugin:define,role:seneca,seq:6,tag:undefined failed: cmd_insert is not defined.	act_execute	{id:xuy4w51ol2v8/1qw3bp7jxzw2,gate:true,ungate:false,desc:null,time:{start:1455793942981,end:1455793942983},mes	ReferenceError: cmd_insert is not defined
+    at Seneca.search (/Users/isaacmahon/Desktop/newWork/nodezoo-search/search.js:18:40)
+    at define_plugin (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/lib/plugins.js:335:26)
+    at Seneca.plugin_definition (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/lib/plugins.js:62:16)
+    at /Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/seneca.js:1123:22
+    at act_param_check (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/seneca.js:1467:17)
+    at Object.execute_action [as fn] (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/seneca.js:1067:7)
+    at Immediate._onImmediate (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/node_modules/gate-executor/gate-executor.js:135:14)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)	
+2016-02-18T11:12:22.991Z lbp0ea19t1ly/1455793923232/16824/undefined FATAL	sys	seneca	1.2.0	lbp0ea19t1ly/1455793923232/16824/undefined	act_execute	seneca: Action name:search,plugin:define,role:seneca,seq:6,tag:undefined failed: cmd_insert is not defined.	{id:xuy4w51ol2v8/1qw3bp7jxzw2,gate:true,ungate:false,desc:null,time:{start:1455793942981,end:1455793942983},mes	-	
+2016-02-18T11:12:22.998Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	IN	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	{role:seneca,plugin:define,name:mesh,tag:null,seq:7}	ENTRY	(8qn7r)	-	-	GATE	
+2016-02-18T11:12:22.999Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	register	init	mesh		{auto:true,pin:role:search}
+2016-02-18T11:12:24.237Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	options	set	{transport:{balance:{}}}	
+2016-02-18T11:12:24.243Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ADD	(hus0k)	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	plugin_definition	
+2016-02-18T11:12:24.244Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ADD	(xccb0)	cmd:listen,role:transport	transport_listen	
+2016-02-18T11:12:24.244Z lbp0ea19t1ly/1455793923232/16824/undefined INFO	listen	{pin:role:search,model:actor}	
+2016-02-18T11:12:24.245Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	options	set	{mesh:{auto:true,pin:role:search}}	
+2016-02-18T11:12:24.247Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	register	install	mesh	{exports:[]}	
+2016-02-18T11:12:24.248Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	act	-	-	DEFAULT	{init:mesh,tag:null}	
+2016-02-18T11:12:24.248Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	-       	OUT	y7nsou7ovtt6/m53lfjjagn2r		{}	EXIT		-	-	0	-	
+2016-02-18T11:12:24.248Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	register	ready	mesh	{}
+2016-02-18T11:12:24.248Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	root$       	OUT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	null	EXIT	(8qn7r)	-	-	1410	GATE	
+2016-02-18T11:12:24.249Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	mesh       	IN	rvdw36w4g3kw/m53lfjjagn2r	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	{role:seneca,plugin:define,name:balance_client,tag:mesh~pc9tke,seq:8}	ENTRY	(hus0k)	-	-	GATE	
+2016-02-18T11:12:24.249Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ACT	rvdw36w4g3kw/m53lfjjagn2r	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	register	init	balance_client/mesh~pc9tke		{}
+2016-02-18T11:12:24.250Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ADD	(rxf0u)	hook:client,role:transport,type:balance	hook_client	
+2016-02-18T11:12:24.250Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ADD	(7yi07)	add:client,role:transport,type:balance	add_client	
+2016-02-18T11:12:24.251Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ADD	(cs5jd)	remove:client,role:transport,type:balance	remove_client	
+2016-02-18T11:12:24.254Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ACT	rvdw36w4g3kw/m53lfjjagn2r	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	plugin	balance_client/mesh~pc9tke	options	set	{"balance_client/mesh~pc9tke":{}}	
+2016-02-18T11:12:24.258Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ACT	rvdw36w4g3kw/m53lfjjagn2r	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	register	install	balance_client/mesh~pc9tke	{exports:[]}	
+2016-02-18T11:12:24.259Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ACT	rvdw36w4g3kw/m53lfjjagn2r	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	act	-	-	DEFAULT	{init:balance_client,tag:mesh~pc9tke}	
+2016-02-18T11:12:24.260Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	-       	OUT	9rxw8p9mk6y5/m53lfjjagn2r		{}	EXIT		-	-	1	-	
+2016-02-18T11:12:24.260Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ACT	rvdw36w4g3kw/m53lfjjagn2r	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	register	ready	balance_client$mesh~pc9tke	{}
+2016-02-18T11:12:24.260Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	mesh       	OUT	rvdw36w4g3kw/m53lfjjagn2r	name:balance_client,plugin:define,role:seneca,seq:8,tag:mesh~pc9tke	null	EXIT	(hus0k)	-	-	17	GATE	
+2016-02-18T11:12:24.260Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	mesh       	IN	bdpqwghk6sbx/wgna67e4u7vk	cmd:listen,role:transport	{config:{pin:role:search,model:actor,type:web,host:null,path:null},role:transport,cmd:listen}	ENTRY	(xccb0)	-	-	GATE	
+2016-02-18T11:12:24.261Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	transport	IN	hx3m2t5l1md2/wgna67e4u7vk	cmd:listen,role:transport	{config:{pin:role:search,model:actor,type:web,host:null,path:null},role:transport,cmd:listen}	PRIOR;(xccb0)	(ubtrg)	-	-	GATE	
+2016-02-18T11:12:24.263Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	transport	IN	nu4sreyzp8kf/wgna67e4u7vk	hook:listen,role:transport,type:web	{pin:role:search,model:actor,type:web,host:null,path:null,role:transport,hook:listen}	ENTRY	(zwuba)	-	-	-	
+2016-02-18T11:12:24.265Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	transport	ACT	nu4sreyzp8kf/wgna67e4u7vk	hook:listen,role:transport,type:web	ADD	(bmdaq)	cmd:close,role:seneca		
+2016-02-18T11:12:24.271Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	ata8gxduplyq/3j7vv33r38ir	name:seneca-mzkjwm,plugin:define,role:seneca,seq:4,tag:undefined	plugin	transport	ACT	nu4sreyzp8kf/wgna67e4u7vk	hook:listen,role:transport,type:web	listen	{pin:role:search,port:53918,model:actor,type:web,host:0.0.0.0,path:null,role:transport,hook:listen}
+2016-02-18T11:12:24.271Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	transport	OUT	nu4sreyzp8kf/wgna67e4u7vk	hook:listen,role:transport,type:web	{pin:role:search,port:53918,model:actor,type:web,host:0.0.0.0,path:null,role:transport,hook:listen}	EXIT	(zwuba)	-	-	8	-	
+2016-02-18T11:12:24.271Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	act	transport	OUT	hx3m2t5l1md2/wgna67e4u7vk	cmd:listen,role:transport	{pin:role:search,port:53918,model:actor,type:web,host:0.0.0.0,path:null,role:transport,hook:listen}	PRIOR;(xccb0)	(ubtrg)	-	-	10	GATE	
+2016-02-18T11:12:24.277Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	-	-	ACT	m87dwvwvyyjf/m53lfjjagn2r	name:mesh,plugin:define,role:seneca,seq:7,tag:undefined	plugin	mesh       	ADD	(wllwn)	get:members,role:mesh	get_members	
+2016-02-18T11:12:24.487Z lbp0ea19t1ly/1455793923232/16824/undefined INFO	client	{type:balance,pin:role:info,cmd:get,model:actor}	
+2016-02-18T11:12:24.487Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	plugin	client$       	ADD	(p2emw)	cmd:get,role:info	transport_client	
+2016-02-18T11:12:24.488Z lbp0ea19t1ly/1455793923232/16824/undefined INFO	client	{type:balance,pin:role:info,res:*,model:actor}	
+2016-02-18T11:12:24.489Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	plugin	client$       	ADD	(de4mr)	res:*,role:info	transport_client	
+2016-02-18T11:12:24.491Z lbp0ea19t1ly/1455793923232/16824/undefined INFO	client	{type:balance,pin:role:github,model:actor}	
+2016-02-18T11:12:24.492Z lbp0ea19t1ly/1455793923232/16824/undefined DEBUG	plugin	client$       	ADD	(7u3jv)	role:github	transport_client	
+
+
+Seneca Fatal Error
+==================
+
+Message: seneca: Action name:search,plugin:define,role:seneca,seq:6,tag:undefined failed: cmd_insert is not defined.
+
+Code: act_execute
+
+Details: { id: 'xuy4w51ol2v8/1qw3bp7jxzw2',
+  gate: true,
+  ungate: false,
+  desc: undefined,
+  cb: [Function: noop],
+  fn: [Function: plugin_definition],
+  time: { start: 1455793942981, end: 1455793942983 },
+  'orig$': [ReferenceError: cmd_insert is not defined],
+  'message$': 'cmd_insert is not defined',
+  message: 'cmd_insert is not defined',
+  pattern: 'name:search,plugin:define,role:seneca,seq:6,tag:undefined',
+  instance: 'Seneca/1.2.0/lbp0ea19t1ly/1455793923232/16824/undefined',
+  plugin: {} }
+
+Stack: 
+    at Seneca.search (/Users/isaacmahon/Desktop/newWork/nodezoo-search/search.js:18:40)
+    at define_plugin (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/lib/plugins.js:335:26)
+    at Seneca.plugin_definition (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/lib/plugins.js:62:16)
+    at /Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/seneca.js:1123:22
+    at act_param_check (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/seneca.js:1467:17)
+    at Object.execute_action [as fn] (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/seneca.js:1067:7)
+    at Immediate._onImmediate (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/node_modules/gate-executor/gate-executor.js:135:14)
+    at processImmediate [as _immediateCallback] (timers.js:383:17)
+
+Instance: Seneca/1.2.0/lbp0ea19t1ly/1455793923232/16824/undefined
+    at Object.act_done (/Users/isaacmahon/Desktop/newWork/nodezoo-search/node_modules/seneca/seneca.js:1185:29)
+
+When: 2016-02-18T11:12:22.993Z
+
+Log: [sys,seneca,1.2.0,lbp0ea19t1ly/1455793923232/16824/undefined,act_execute,seneca: Action name:search,plugin:defi
+
+Node:
+  { http_parser: '2.5.0', node: '4.2.4', v8: '4.5.103.35', uv: '1.7.5', zlib: '1.2.8', ares: '1.10.1-DEV', icu: '56.1', modules: '46', openssl: '1.0.2e' },
+  { debug: false, uv: true, ipv6: true, tls_npn: true, tls_sni: true, tls_ocsp: true, tls: true },
+  [ 'Binding contextify', 'Binding natives', 'NativeModule events', 'NativeModule buffer', 'Binding buffer', 'NativeModule internal/util', 'NativeModule timers', 'Binding timer_wrap', 'NativeModule _linklist', 'NativeModule assert', 'NativeModule util', 'Binding uv', 'Binding util', 'NativeModule path', 'NativeModule module', 'NativeModule internal/module', 'NativeModule vm', 'NativeModule fs', 'Binding fs', 'NativeModule constants', 'Binding constants', 'NativeModule stream', 'NativeModule _stream_readable', 'NativeModule _stream_writable', 'NativeModule _stream_duplex', 'NativeModule _stream_transform', 'NativeModule _stream_passthrough', 'Binding fs_event_wrap', 'NativeModule console', 'Binding tty_wrap', 'NativeModule net', 'Binding cares_wrap', 'Binding tcp_wrap', 'Binding pipe_wrap', 'Binding stream_wrap', 'Binding signal_wrap', 'NativeModule readline', 'NativeModule domain', 'NativeModule os', 'Binding os', 'NativeModule http', 'NativeModule _http_incoming', 'NativeModule _http_common', 'NativeModule internal/freelist', 'Binding http_parser', 'NativeModule _http_outgoing', 'NativeModule _http_server', 'NativeModule _http_agent', 'NativeModule _http_client', 'NativeModule url', 'NativeModule punycode', 'NativeModule querystring', 'NativeModule https', 'NativeModule tls', 'Binding crypto', 'NativeModule _tls_common', 'NativeModule _tls_wrap', 'NativeModule crypto', 'NativeModule internal/streams/lazy_transform', 'NativeModule string_decoder', 'NativeModule _stream_wrap', 'Binding js_stream', 'Binding tls_wrap', 'NativeModule _tls_legacy', 'NativeModule tty', 'NativeModule zlib', 'Binding zlib', 'NativeModule dgram', 'Binding udp_wrap', 'NativeModule dns' ]
+
+Process: 
+  pid=16824, arch=x64, platform=darwin,
+  path=/Users/isaacmahon/.nvm/versions/node/v4.2.4/bin/node,
+  argv=[ '/Users/isaacmahon/.nvm/versions/node/v4.2.4/bin/node',  '/Users/isaacmahon/Desktop/newWork/nodezoo-search/srv/search-dev.js',  '--seneca.options.tag=search',  '--seneca.log.all' ],
+  env={ elasticsearch_PORT_9300: '9200',  MANPATH: '/Users/isaacmahon/.nvm/versions/node/v4.2.4/share/man:/usr/local/share/man:/usr/share/man:/Applications/Xcode.app/Contents/Developer/usr/share/man:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/share/man',  NVM_IOJS_ORG_VERSION_LISTING: 'https://iojs.org/dist/index.tab',  mesh_PORT: '10000',  TERM_PROGRAM: 'Apple_Terminal',  SHELL: '/bin/bash',  TERM: 'xterm-256color',  TMPDIR: '/var/folders/th/57twd8tx0l79zvz2mtqc5qjw0000gn/T/',  beanstalkd_PORT: '11300',  elasticsearch_PORT_9200: '9200',  Apple_PubSub_Socket_Render: '/private/tmp/com.apple.launchd.1yuLJoxzf6/Render',  NVM_PATH: '/Users/isaacmahon/.nvm/versions/node/v4.2.4/lib/node',  DOCKER_HOST: 'tcp://192.168.99.100:2376',  influx_PORT_8083: '8086',  TERM_PROGRAM_VERSION: '343.7',  redis_PORT: '6379',  TERM_SESSION_ID: '2D8E5B74-C456-4D0F-8F9F-FCB63E482ADA',  search_PORT: '10005',  npm_PORT: '10004',  influx_PORT_8086: '8086',  USER: 'isaacmahon',  NVM_DIR: '/Users/isaacmahon/.nvm',  SERVICE_HOST: '0.0.0.0',  DOCKER_MACHINE_NAME: 'default',  SERVICE_PORT: '20005',  concorda_PORT: '10007',  SSH_AUTH_SOCK: '/private/tmp/com.apple.launchd.sP96mY1pUp/Listeners',  __CF_USER_TEXT_ENCODING: '0x1F5:0x0:0x0',  github_PORT: '10002',  DOCKER_TLS_VERIFY: '1',  web_PORT: '10006',  PROXY_HOST: '127.0.0.1',  PATH: '/Users/isaacmahon/.nvm/versions/node/v4.2.4/bin:/Users/isaacmahon/.nvm/versions/node/v4.2.4/lib/node_modules/fuge/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin',  NVM_NODEJS_ORG_MIRROR: 'https://nodejs.org/dist',  PWD: '/Users/isaacmahon/Desktop/newWork/nodezoo-search',  LANG: 'en_IE.UTF-8',  XPC_FLAGS: '0x0',  msgstats_PORT: '10001',  XPC_SERVICE_NAME: '0',  SHLVL: '1',  HOME: '/Users/isaacmahon',  DOCKER_CERT_PATH: '/Users/isaacmahon/.docker/machine/machines/default',  info_PORT: '10003',  vidi_PORT: '10008',  LOGNAME: 'isaacmahon',  NVM_BIN: '/Users/isaacmahon/.nvm/versions/node/v4.2.4/bin',  NVM_IOJS_ORG_MIRROR: 'https://iojs.org/dist',  SECURITYSESSIONID: '186a6' }
+
+
+
+
+SENECA TERMINATED at 2016-02-18T11:12:24.627Z. See above for error report.
+
+

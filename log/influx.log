@@ -1,0 +1,410 @@
+influxdb configuration: 
+### Welcome to the InfluxDB configuration file.
+
+# Once every 24 hours InfluxDB will report anonymous data to m.influxdb.com
+# The data includes raft id (random 8 bytes), os, arch, version, and metadata.
+# We don't track ip addresses of servers reporting. This is only used
+# to track the number of instances running and the versions, which
+# is very helpful for us.
+# Change this option to true to disable reporting.
+reporting-disabled = false
+
+###
+### [meta]
+###
+### Controls the parameters for the Raft consensus group that stores metadata
+### about the InfluxDB cluster.
+###
+
+[meta]
+  dir = "/data/meta"
+  hostname = "localhost"
+  bind-address = ":8088"
+  retention-autocreate = true
+  election-timeout = "1s"
+  heartbeat-timeout = "1s"
+  leader-lease-timeout = "500ms"
+  commit-timeout = "50ms"
+
+###
+### [data]
+###
+### Controls where the actual shard data for InfluxDB lives and how it is
+### flushed from the WAL. "dir" may need to be changed to a suitable place
+### for your system, but the WAL settings are an advanced configuration. The
+### defaults should work for most systems.
+###
+
+[data]
+  dir = "/data/db"
+
+  # The following WAL settings are for the b1 storage engine used in 0.9.2. They won't
+  # apply to any new shards created after upgrading to a version > 0.9.3.
+  max-wal-size = 104857600 # Maximum size the WAL can reach before a flush. Defaults to 100MB.
+  wal-flush-interval = "10m0s" # Maximum time data can sit in WAL before a flush.
+  wal-partition-flush-delay = "2s" # The delay time between each WAL partition being flushed.
+
+  # These are the WAL settings for the storage engine >= 0.9.3
+  wal-dir = "/data/wal"
+  wal-enable-logging = true
+
+  # When a series in the WAL in-memory cache reaches this size in bytes it is marked as ready to
+  # flush to the index
+  # wal-ready-series-size = 25600
+
+  # Flush and compact a partition once this ratio of series are over the ready size
+  # wal-compaction-threshold = 0.6
+
+  # Force a flush and compaction if any series in a partition gets above this size in bytes
+  # wal-max-series-size = 2097152
+
+  # Force a flush of all series and full compaction if there have been no writes in this
+  # amount of time. This is useful for ensuring that shards that are cold for writes don't
+  # keep a bunch of data cached in memory and in the WAL.
+  # wal-flush-cold-interval = "10m"
+
+  # Force a partition to flush its largest series if it reaches this approximate size in
+  # bytes. Remember there are 5 partitions so you'll need at least 5x this amount of memory.
+  # The more memory you have, the bigger this can be.
+  # wal-partition-size-threshold = 20971520
+
+###
+### [cluster]
+###
+### Controls non-Raft cluster behavior, which generally includes how data is
+### shared across shards.
+###
+[cluster]
+  write-timeout = "5s" # The time within which a write operation must complete on the cluster.
+  shard-writer-timeout = "5s" # The time within which a shard must respond to write.
+
+###
+### [retention]
+###
+### Controls the enforcement of retention policies for evicting old data.
+###
+[retention]
+  enabled = true
+  check-interval = "10m0s"
+
+###
+### [admin]
+###
+### Controls the availability of the built-in, web-based admin interface. If HTTPS is
+### enabled for the admin interface, HTTPS must also be enabled on the [http] service.
+###
+[admin]
+  enabled = true
+  bind-address = ":8083"
+  https-enabled = false
+  https-certificate = "/etc/ssl/influxdb.pem"
+
+###
+### [http]
+###
+### Controls how the HTTP endpoints are configured. These are the primary
+### mechanism for getting data into and out of InfluxDB.
+###
+[http]
+  enabled = true
+  bind-address = ":8086"
+  auth-enabled = false
+  log-enabled = true
+  write-tracing = false
+  pprof-enabled = false
+  https-enabled = false
+  https-certificate = "/etc/ssl/influxdb.pem"
+
+###
+### [[graphite]]
+###
+### Controls one or many listeners for Graphite data.
+###
+[[graphite]]
+  enabled = false
+  bind-address = ":2003"
+  protocol = "tcp"
+  consistency-level = "one"
+  separator = "."
+  database = "graphitedb"
+
+  # These next lines control how batching works. You should have this enabled
+  # otherwise you could get dropped metrics or poor performance. Batching
+  # will buffer points in memory if you have many coming in.
+
+  # batch-size = 1000 # will flush if this many points get buffered
+  # batch-timeout = "1s" # will flush at least this often even if we haven't hit buffer limit
+  batch-size = 1000
+  batch-timeout = "1s"
+  templates = [
+     # filter + template
+     #"*.app env.service.resource.measurement",
+
+     # filter + template + extra tag
+     #"stats.* .host.measurement* region=us-west,agent=sensu",
+
+     # default template. Ignore the first graphite component "servers"
+     "instance.profile.measurement*"
+ ]
+
+###
+### [collectd]
+###
+### Controls the listener for collectd data.
+###
+[collectd]
+  enabled = false
+  # bind-address = ":25826"
+  # database = "collectd"
+  # retention-policy = ""
+  # typesdb = "/usr/share/collectd/types.db"
+
+  # These next lines control how batching works. You should have this enabled
+  # otherwise you could get dropped metrics or poor performance. Batching
+  # will buffer points in memory if you have many coming in.
+
+  # batch-size = 1000 # will flush if this many points get buffered
+  # batch-timeout = "1s" # will flush at least this often even if we haven't hit buffer limit
+
+###
+### [opentsdb]
+###
+### Controls the listener for OpenTSDB data.
+###
+[opentsdb]
+  enabled = false
+  # bind-address = ":4242"
+  # database = "opentsdb"
+  # retention-policy = ""
+  # consistency-level = "one"
+
+###
+### [[udp]]
+###
+### Controls the listeners for InfluxDB line protocol data via UDP.
+###
+
+[[udp]]
+  enabled = false
+  bind-address = ":4444"
+  database = "udpdb"
+
+  # These next lines control how batching works. You should have this enabled
+  # otherwise you could get dropped metrics or poor performance. Batching
+  # will buffer points in memory if you have many coming in.
+
+  # batch-size = 1000 # will flush if this many points get buffered
+  # batch-timeout = "1s" # will flush at least this often even if we haven't hit buffer limit
+
+###
+### [monitoring]
+###
+### Send anonymous usage statistics to m.influxdb.com?
+###
+[monitoring]
+  enabled = false
+  write-interval = "24h"
+
+###
+### [continuous_queries]
+###
+### Controls how continuous queries are run within InfluxDB.
+###
+
+[continuous_queries]
+  log-enabled = true
+  enabled = true
+  recompute-previous-n = 2
+  recompute-no-older-than = "10m0s"
+  compute-runs-per-interval = 10
+  compute-no-more-than = "2m0s"
+
+###
+### [hinted-handoff]
+###
+### Controls the hinted handoff feature, which allows nodes to temporarily
+### store queued data when one node of a cluster is down for a short period
+### of time.
+###
+
+[hinted-handoff]
+  enabled = true
+  dir = "/data/hh"
+  max-size = 1073741824
+  max-age = "168h"
+  retry-rate-limit = 0
+  retry-interval = "1s"
+=> Starting InfluxDB ...
+=> About to create the following database: seneca_msgstats
+=> Waiting for confirmation of InfluxDB service startup ...
+
+ 8888888           .d888 888                   8888888b.  888888b.
+   888            d88P"  888                   888  "Y88b 888  "88b
+   888            888    888                   888    888 888  .88P
+   888   88888b.  888888 888 888  888 888  888 888    888 8888888K.
+   888   888 "88b 888    888 888  888  Y8bd8P' 888    888 888  "Y88b
+   888   888  888 888    888 888  888   X88K   888    888 888    888
+   888   888  888 888    888 Y88b 888 .d8""8b. 888  .d88P 888   d88P
+ 8888888 888  888 888    888  "Y88888 888  888 8888888P"  8888888P"
+
+2016/02/18 11:10:36 InfluxDB starting, version 0.9.6.1, branch 0.9.6, commit 6d3a8603cfdaf1a141779ed88b093dcc5c528e5e, built 2015-12-10T23:40:23+0000
+2016/02/18 11:10:36 Go version go1.4.2, GOMAXPROCS set to 1
+2016/02/18 11:10:36 Using configuration at: /config/config.toml
+[metastore] 2016/02/18 11:10:38 Using data dir: /data/meta
+=> Waiting for confirmation of InfluxDB service startup ...
+[metastore] 2016/02/18 11:10:40 Node at localhost:8088 [Follower]
+[metastore] 2016/02/18 11:10:42 Node at localhost:8088 [Leader]. peers=[]
+[metastore] 2016/02/18 11:10:42 Created local node: id=1, host=localhost:8088
+[metastore] 2016/02/18 11:10:42 spun up monitoring for 1
+[store] 2016/02/18 11:10:42 Using data dir: /data/db
+[handoff] 2016/02/18 11:10:42 Starting hinted handoff service
+[monitor] 2016/02/18 11:10:42 'hh' registered for diagnostics monitoring
+[handoff] 2016/02/18 11:10:42 Using data dir: /data/hh
+[subscriber] 2016/02/18 11:10:42 opened service
+[monitor] 2016/02/18 11:10:42 Starting monitor system
+[monitor] 2016/02/18 11:10:42 'build' registered for diagnostics monitoring
+[monitor] 2016/02/18 11:10:42 'runtime' registered for diagnostics monitoring
+[monitor] 2016/02/18 11:10:42 'network' registered for diagnostics monitoring
+[monitor] 2016/02/18 11:10:42 'system' registered for diagnostics monitoring
+[cluster] 2016/02/18 11:10:42 Starting cluster service
+[shard-precreation] 2016/02/18 11:10:42 Starting precreation service with check interval of 10m0s, advance period of 30m0s
+[snapshot] 2016/02/18 11:10:42 Starting snapshot service
+[copier] 2016/02/18 11:10:42 Starting copier service
+[admin] 2016/02/18 11:10:42 Starting admin service
+[admin] 2016/02/18 11:10:42 Listening on HTTP: [::]:8083
+[continuous_querier] 2016/02/18 11:10:42 Starting continuous query service
+[httpd] 2016/02/18 11:10:42 Starting HTTP service
+[httpd] 2016/02/18 11:10:42 Authentication enabled: false
+[httpd] 2016/02/18 11:10:42 Listening on HTTP: [::]:8086
+[retention] 2016/02/18 11:10:42 Starting retention policy enforcement service with check interval of 10m0s
+[run] 2016/02/18 11:10:42 Listening for signals
+[monitor] 2016/02/18 11:10:42 Storing statistics in database '_internal' retention policy '', at interval 10s
+2016/02/18 11:10:42 Sending anonymous usage statistics to m.influxdb.com
+[http] 2016/02/18 11:10:43 ::1 - - [18/Feb/2016:11:10:43 +0000] GET /ping HTTP/1.1 204 0 - curl/7.35.0 4094ad6c-d630-11e5-8001-000000000000 44.617µs
+
+=> Creating admin user
+[http] 2016/02/18 11:10:50 127.0.0.1 - - [18/Feb/2016:11:10:50 +0000] GET /ping HTTP/1.1 204 0 - InfluxDBShell/0.9.6.1 448f10bc-d630-11e5-8002-000000000000 53.603µs
+[query] 2016/02/18 11:10:50 CREATE USER msgstats WITH PASSWORD [REDACTED] WITH ALL PRIVILEGES
+[http] 2016/02/18 11:10:50 127.0.0.1 - - [18/Feb/2016:11:10:50 +0000] GET /query?db=&epoch=ns&q=CREATE+USER+[REDACTED]+WITH+PASSWORD+%27[REDACTED]%27+WITH+ALL+PRIVILEGES HTTP/1.1 200 40 - InfluxDBShell/0.9.6.1 448f31f7-d630-11e5-8003-000000000000 294.381425ms
+=> Creating database: seneca_msgstats
+[http] 2016/02/18 11:10:50 127.0.0.1 - msgstats [18/Feb/2016:11:10:50 +0000] GET /ping HTTP/1.1 204 0 - InfluxDBShell/0.9.6.1 44c0cdaf-d630-11e5-8004-000000000000 46.862µs
+[query] 2016/02/18 11:10:50 CREATE DATABASE seneca_msgstats
+[metastore] 2016/02/18 11:10:50 database 'seneca_msgstats' created
+[metastore] 2016/02/18 11:10:50 retention policy 'default' for database 'seneca_msgstats' created
+[http] 2016/02/18 11:10:50 127.0.0.1 - msgstats [18/Feb/2016:11:10:50 +0000] GET /query?db=&epoch=ns&q=create+database+seneca_msgstats HTTP/1.1 200 40 - InfluxDBShell/0.9.6.1 44c0eb0c-d630-11e5-8005-000000000000 325.513133ms
+[http] 2016/02/18 11:10:50 127.0.0.1 - msgstats [18/Feb/2016:11:10:50 +0000] GET /ping HTTP/1.1 204 0 - InfluxDBShell/0.9.6.1 44f3d949-d630-11e5-8006-000000000000 49.401µs
+[query] 2016/02/18 11:10:50 GRANT ALL PRIVILEGES ON seneca_msgstats TO msgstats
+[http] 2016/02/18 11:10:51 127.0.0.1 - msgstats [18/Feb/2016:11:10:50 +0000] GET /query?db=&epoch=ns&q=grant+all+PRIVILEGES+on+seneca_msgstats+to+msgstats HTTP/1.1 200 40 - InfluxDBShell/0.9.6.1 44f3f610-d630-11e5-8007-000000000000 242.099986ms
+
+exec influxd -config=${CONFIG_FILE}
+[metastore] 2016/02/18 11:10:52 database '_internal' created
+[metastore] 2016/02/18 11:10:53 retention policy 'default' for database '_internal' created
+[metastore] 2016/02/18 11:10:53 retention policy 'monitor' for database '_internal' created
+[wal] 2016/02/18 11:10:54 WAL starting with 30720 ready series size, 0.50 compaction threshold, and 52428800 partition size threshold
+[wal] 2016/02/18 11:10:54 WAL writing to /data/wal/_internal/monitor/1
+[wal] 2016/02/18 11:11:00 Flush due to idle. Flushing 2 series with 2 points and 187 bytes from partition 1
+[wal] 2016/02/18 11:11:04 write to index of partition 1 took 3.171792697s
+[wal] 2016/02/18 11:11:10 Flush due to idle. Flushing 7 series with 7 points and 425 bytes from partition 1
+[wal] 2016/02/18 11:11:10 write to index of partition 1 took 241.698657ms
+[wal] 2016/02/18 11:11:18 Flush due to idle. Flushing 7 series with 7 points and 434 bytes from partition 1
+[wal] 2016/02/18 11:11:18 write to index of partition 1 took 149.98235ms
+[wal] 2016/02/18 11:11:24 WAL starting with 30720 ready series size, 0.50 compaction threshold, and 52428800 partition size threshold
+[wal] 2016/02/18 11:11:24 WAL writing to /data/wal/seneca_msgstats/default/2
+[http] 2016/02/18 11:11:24 192.168.99.1 - msgstats [18/Feb/2016:11:11:23 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 58ac49e0-d630-11e5-8008-000000000000 597.784296ms
+[http] 2016/02/18 11:11:24 192.168.99.1 - msgstats [18/Feb/2016:11:11:24 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5935d5c4-d630-11e5-8009-000000000000 139.529842ms
+[http] 2016/02/18 11:11:25 192.168.99.1 - msgstats [18/Feb/2016:11:11:25 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 59ce30fd-d630-11e5-800a-000000000000 171.677691ms
+[http] 2016/02/18 11:11:26 192.168.99.1 - msgstats [18/Feb/2016:11:11:26 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5a67c862-d630-11e5-800b-000000000000 137.063838ms
+[wal] 2016/02/18 11:11:27 Flush due to idle. Flushing 7 series with 7 points and 434 bytes from partition 1
+[http] 2016/02/18 11:11:27 192.168.99.1 - msgstats [18/Feb/2016:11:11:27 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5b005c4d-d630-11e5-800c-000000000000 101.013738ms
+[wal] 2016/02/18 11:11:27 write to index of partition 1 took 27.803316ms
+[http] 2016/02/18 11:11:29 192.168.99.1 - msgstats [18/Feb/2016:11:11:28 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5b997e37-d630-11e5-800d-000000000000 297.094268ms
+[http] 2016/02/18 11:11:30 192.168.99.1 - msgstats [18/Feb/2016:11:11:29 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5c333395-d630-11e5-800e-000000000000 310.475532ms
+[http] 2016/02/18 11:11:31 192.168.99.1 - msgstats [18/Feb/2016:11:11:30 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5ccc0d48-d630-11e5-800f-000000000000 251.903597ms
+[http] 2016/02/18 11:11:32 192.168.99.1 - msgstats [18/Feb/2016:11:11:31 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5d657c9e-d630-11e5-8010-000000000000 574.057812ms
+[http] 2016/02/18 11:11:33 192.168.99.1 - msgstats [18/Feb/2016:11:11:32 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5dfe5b6e-d630-11e5-8011-000000000000 689.978849ms
+[http] 2016/02/18 11:11:33 192.168.99.1 - msgstats [18/Feb/2016:11:11:33 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5e97f13a-d630-11e5-8012-000000000000 138.165151ms
+[http] 2016/02/18 11:11:35 192.168.99.1 - msgstats [18/Feb/2016:11:11:34 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5f30b1e2-d630-11e5-8013-000000000000 264.80869ms
+[http] 2016/02/18 11:11:37 192.168.99.1 - msgstats [18/Feb/2016:11:11:35 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 5fc99775-d630-11e5-8014-000000000000 1.888555415s
+[http] 2016/02/18 11:11:37 192.168.99.1 - msgstats [18/Feb/2016:11:11:36 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 60630656-d630-11e5-8015-000000000000 998.564171ms
+[http] 2016/02/18 11:11:37 192.168.99.1 - msgstats [18/Feb/2016:11:11:37 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 60fc960f-d630-11e5-8016-000000000000 77.354501ms
+[wal] 2016/02/18 11:11:38 Flush due to idle. Flushing 9 series with 9 points and 549 bytes from partition 1
+[wal] 2016/02/18 11:11:39 write to index of partition 1 took 713.475665ms
+[http] 2016/02/18 11:11:39 192.168.99.1 - msgstats [18/Feb/2016:11:11:38 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 619495f1-d630-11e5-8017-000000000000 261.528979ms
+[http] 2016/02/18 11:11:40 192.168.99.1 - msgstats [18/Feb/2016:11:11:39 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 622db0e4-d630-11e5-8018-000000000000 264.379315ms
+[http] 2016/02/18 11:11:40 192.168.99.1 - msgstats [18/Feb/2016:11:11:40 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 62c67f7b-d630-11e5-8019-000000000000 117.632934ms
+[http] 2016/02/18 11:11:41 192.168.99.1 - msgstats [18/Feb/2016:11:11:41 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 63601187-d630-11e5-801a-000000000000 111.507895ms
+[http] 2016/02/18 11:11:43 192.168.99.1 - msgstats [18/Feb/2016:11:11:42 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 63f90fcc-d630-11e5-801b-000000000000 173.99921ms
+[http] 2016/02/18 11:11:43 192.168.99.1 - msgstats [18/Feb/2016:11:11:43 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6491fb2d-d630-11e5-801c-000000000000 110.007958ms
+[http] 2016/02/18 11:11:45 192.168.99.1 - msgstats [18/Feb/2016:11:11:44 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 652aa9eb-d630-11e5-801d-000000000000 234.459042ms
+[http] 2016/02/18 11:11:46 192.168.99.1 - msgstats [18/Feb/2016:11:11:45 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 65c4231d-d630-11e5-801e-000000000000 173.168872ms
+[http] 2016/02/18 11:11:47 192.168.99.1 - msgstats [18/Feb/2016:11:11:46 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 665da7c2-d630-11e5-801f-000000000000 119.550857ms
+[wal] 2016/02/18 11:11:48 Flush due to idle. Flushing 9 series with 9 points and 549 bytes from partition 1
+[http] 2016/02/18 11:11:48 192.168.99.1 - msgstats [18/Feb/2016:11:11:47 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 66f66007-d630-11e5-8020-000000000000 176.100947ms
+[wal] 2016/02/18 11:11:48 write to index of partition 1 took 255.792443ms
+[http] 2016/02/18 11:11:49 192.168.99.1 - msgstats [18/Feb/2016:11:11:48 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 678f073c-d630-11e5-8021-000000000000 131.028931ms
+[http] 2016/02/18 11:11:50 192.168.99.1 - msgstats [18/Feb/2016:11:11:49 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 68287754-d630-11e5-8022-000000000000 146.373649ms
+[http] 2016/02/18 11:11:51 192.168.99.1 - msgstats [18/Feb/2016:11:11:50 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 68c14fa6-d630-11e5-8023-000000000000 427.217461ms
+[http] 2016/02/18 11:11:52 192.168.99.1 - msgstats [18/Feb/2016:11:11:51 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6959be3d-d630-11e5-8024-000000000000 249.308056ms
+[http] 2016/02/18 11:11:53 192.168.99.1 - msgstats [18/Feb/2016:11:11:52 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 69f5c68e-d630-11e5-8025-000000000000 127.292307ms
+[http] 2016/02/18 11:11:54 192.168.99.1 - msgstats [18/Feb/2016:11:11:53 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6a8b5578-d630-11e5-8026-000000000000 224.937646ms
+[http] 2016/02/18 11:11:55 192.168.99.1 - msgstats [18/Feb/2016:11:11:54 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6b24a809-d630-11e5-8027-000000000000 113.510991ms
+[http] 2016/02/18 11:11:56 192.168.99.1 - msgstats [18/Feb/2016:11:11:55 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6bbe90a5-d630-11e5-8028-000000000000 175.991446ms
+[http] 2016/02/18 11:11:57 192.168.99.1 - msgstats [18/Feb/2016:11:11:56 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6c574e26-d630-11e5-8029-000000000000 155.495892ms
+[http] 2016/02/18 11:11:57 192.168.99.1 - msgstats [18/Feb/2016:11:11:57 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6cba6270-d630-11e5-802a-000000000000 343.843338ms
+[http] 2016/02/18 11:11:57 192.168.99.1 - msgstats [18/Feb/2016:11:11:57 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6cf05696-d630-11e5-802b-000000000000 73.031146ms
+[wal] 2016/02/18 11:11:58 Flush due to idle. Flushing 9 series with 9 points and 549 bytes from partition 1
+[http] 2016/02/18 11:11:58 192.168.99.1 - msgstats [18/Feb/2016:11:11:58 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6d4bc068-d630-11e5-802c-000000000000 89.429433ms
+[wal] 2016/02/18 11:11:58 write to index of partition 1 took 293.238732ms
+[http] 2016/02/18 11:11:59 192.168.99.1 - msgstats [18/Feb/2016:11:11:58 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6d88ea3e-d630-11e5-802d-000000000000 277.173441ms
+[http] 2016/02/18 11:12:00 192.168.99.1 - msgstats [18/Feb/2016:11:11:59 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6de4b1cb-d630-11e5-802e-000000000000 834.883538ms
+[http] 2016/02/18 11:12:01 192.168.99.1 - msgstats [18/Feb/2016:11:11:59 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6e21dc4a-d630-11e5-802f-000000000000 1.504720661s
+[http] 2016/02/18 11:12:01 192.168.99.1 - msgstats [18/Feb/2016:11:12:00 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6e7dde45-d630-11e5-8030-000000000000 1.305978978s
+[http] 2016/02/18 11:12:02 192.168.99.1 - msgstats [18/Feb/2016:11:12:01 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6f172fd3-d630-11e5-8032-000000000000 658.913262ms
+[http] 2016/02/18 11:12:02 192.168.99.1 - msgstats [18/Feb/2016:11:12:01 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6f54a201-d630-11e5-8033-000000000000 352.747102ms
+[http] 2016/02/18 11:12:02 192.168.99.1 - msgstats [18/Feb/2016:11:12:00 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6ebb3ded-d630-11e5-8031-000000000000 1.460931446s
+[http] 2016/02/18 11:12:02 192.168.99.1 - msgstats [18/Feb/2016:11:12:02 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6fafd3fa-d630-11e5-8034-000000000000 162.660348ms
+[http] 2016/02/18 11:12:03 192.168.99.1 - msgstats [18/Feb/2016:11:12:02 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 6fece11e-d630-11e5-8035-000000000000 133.99157ms
+[http] 2016/02/18 11:12:03 192.168.99.1 - msgstats [18/Feb/2016:11:12:03 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7048fc16-d630-11e5-8036-000000000000 222.542494ms
+[http] 2016/02/18 11:12:04 192.168.99.1 - msgstats [18/Feb/2016:11:12:03 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 70869714-d630-11e5-8037-000000000000 94.154446ms
+[http] 2016/02/18 11:12:04 192.168.99.1 - msgstats [18/Feb/2016:11:12:04 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 70e1f668-d630-11e5-8038-000000000000 164.618146ms
+[http] 2016/02/18 11:12:05 192.168.99.1 - msgstats [18/Feb/2016:11:12:04 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 71200aa5-d630-11e5-8039-000000000000 325.434667ms
+[http] 2016/02/18 11:12:05 192.168.99.1 - msgstats [18/Feb/2016:11:12:05 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 717b0baf-d630-11e5-803a-000000000000 159.731836ms
+[http] 2016/02/18 11:12:06 192.168.99.1 - msgstats [18/Feb/2016:11:12:05 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 71ba0566-d630-11e5-803b-000000000000 61.468021ms
+[http] 2016/02/18 11:12:06 192.168.99.1 - msgstats [18/Feb/2016:11:12:06 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7213f6e9-d630-11e5-803c-000000000000 193.246272ms
+[wal] 2016/02/18 11:12:07 Flush due to idle. Flushing 9 series with 9 points and 549 bytes from partition 1
+[http] 2016/02/18 11:12:08 192.168.99.1 - msgstats [18/Feb/2016:11:12:06 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 72520b8f-d630-11e5-803d-000000000000 1.618176699s
+[wal] 2016/02/18 11:12:08 write to index of partition 1 took 980.963915ms
+[http] 2016/02/18 11:12:08 192.168.99.1 - msgstats [18/Feb/2016:11:12:07 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 72acfac6-d630-11e5-803e-000000000000 1.288194985s
+[http] 2016/02/18 11:12:08 192.168.99.1 - msgstats [18/Feb/2016:11:12:07 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 72eb3957-d630-11e5-803f-000000000000 1.019410554s
+[http] 2016/02/18 11:12:09 192.168.99.1 - msgstats [18/Feb/2016:11:12:08 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 73840ec3-d630-11e5-8041-000000000000 718.018375ms
+[http] 2016/02/18 11:12:09 192.168.99.1 - msgstats [18/Feb/2016:11:12:09 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 73dfa5dd-d630-11e5-8042-000000000000 223.412629ms
+[http] 2016/02/18 11:12:09 192.168.99.1 - msgstats [18/Feb/2016:11:12:08 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7346374b-d630-11e5-8040-000000000000 1.416055855s
+[http] 2016/02/18 11:12:10 192.168.99.1 - msgstats [18/Feb/2016:11:12:09 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 741d69ce-d630-11e5-8043-000000000000 291.898021ms
+[http] 2016/02/18 11:12:10 192.168.99.1 - msgstats [18/Feb/2016:11:12:10 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7478ff3f-d630-11e5-8044-000000000000 341.082314ms
+[http] 2016/02/18 11:12:12 192.168.99.1 - msgstats [18/Feb/2016:11:12:10 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 74b65dab-d630-11e5-8045-000000000000 1.907800351s
+[http] 2016/02/18 11:12:13 192.168.99.1 - msgstats [18/Feb/2016:11:12:11 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7511c9e2-d630-11e5-8046-000000000000 1.814174089s
+[http] 2016/02/18 11:12:14 192.168.99.1 - msgstats [18/Feb/2016:11:12:12 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 75e995ff-d630-11e5-8049-000000000000 1.482116185s
+[http] 2016/02/18 11:12:14 192.168.99.1 - msgstats [18/Feb/2016:11:12:12 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 75ab0466-d630-11e5-8048-000000000000 1.986993568s
+[http] 2016/02/18 11:12:14 192.168.99.1 - msgstats [18/Feb/2016:11:12:11 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 754fe038-d630-11e5-8047-000000000000 2.704873969s
+[wal] 2016/02/18 11:12:18 Flush due to idle. Flushing 9 series with 9 points and 549 bytes from partition 1
+[wal] 2016/02/18 11:12:18 write to index of partition 1 took 598.16901ms
+[http] 2016/02/18 11:12:19 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d5522-d630-11e5-804a-000000000000 469.030757ms
+[http] 2016/02/18 11:12:19 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d8c94-d630-11e5-804b-000000000000 814.908064ms
+[http] 2016/02/18 11:12:19 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d8f31-d630-11e5-804c-000000000000 883.48657ms
+[http] 2016/02/18 11:12:19 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d910d-d630-11e5-804d-000000000000 985.430765ms
+[http] 2016/02/18 11:12:19 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d92a8-d630-11e5-804e-000000000000 1.192209736s
+[http] 2016/02/18 11:12:20 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d9423-d630-11e5-804f-000000000000 1.520582525s
+[http] 2016/02/18 11:12:20 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d95b1-d630-11e5-8050-000000000000 1.596837773s
+[http] 2016/02/18 11:12:20 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d9724-d630-11e5-8051-000000000000 1.691299254s
+[http] 2016/02/18 11:12:20 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d989a-d630-11e5-8052-000000000000 1.815968539s
+[http] 2016/02/18 11:12:20 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d9a0f-d630-11e5-8053-000000000000 1.953937545s
+[http] 2016/02/18 11:12:20 192.168.99.1 - msgstats [18/Feb/2016:11:12:18 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 794d9b85-d630-11e5-8054-000000000000 2.067317024s
+[http] 2016/02/18 11:12:20 192.168.99.1 - msgstats [18/Feb/2016:11:12:20 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7a9e735c-d630-11e5-8055-000000000000 105.010904ms
+[http] 2016/02/18 11:12:21 192.168.99.1 - msgstats [18/Feb/2016:11:12:20 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7a9e8bcb-d630-11e5-8056-000000000000 160.360214ms
+[http] 2016/02/18 11:12:21 192.168.99.1 - msgstats [18/Feb/2016:11:12:20 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7a9ea086-d630-11e5-8057-000000000000 201.490025ms
+[http] 2016/02/18 11:12:21 192.168.99.1 - msgstats [18/Feb/2016:11:12:20 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7a9ea54b-d630-11e5-8058-000000000000 214.751402ms
+[http] 2016/02/18 11:12:22 192.168.99.1 - msgstats [18/Feb/2016:11:12:22 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7b6b9ed5-d630-11e5-8059-000000000000 47.056292ms
+[http] 2016/02/18 11:12:22 192.168.99.1 - msgstats [18/Feb/2016:11:12:22 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7b6bb875-d630-11e5-805a-000000000000 147.04918ms
+[http] 2016/02/18 11:12:22 192.168.99.1 - msgstats [18/Feb/2016:11:12:22 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7b6bbb4e-d630-11e5-805b-000000000000 270.024439ms
+[http] 2016/02/18 11:12:22 192.168.99.1 - msgstats [18/Feb/2016:11:12:22 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7ba509cf-d630-11e5-805c-000000000000 85.997193ms
+[http] 2016/02/18 11:12:23 192.168.99.1 - msgstats [18/Feb/2016:11:12:22 +0000] POST /write?database=seneca_msgstats&db=seneca_msgstats&p=%5BREDACTED%5D&precision=ms&u=msgstats HTTP/1.1 204 0 - - 7be27ec2-d630-11e5-805d-000000000000 36.091618ms
