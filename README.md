@@ -64,7 +64,7 @@ The links for each required repo are listed below,
 - [Nodezoo github][]
 - [Nodezoo npm][]
 - [Concorda][]
-- [Vidi-Dashboard][]
+- [Vidi-Dashboard][Vidi]
 
 If you have git available at the command line you can clone each repo using commands in the form,
 ```
@@ -129,8 +129,9 @@ Licensed under [MIT][].
 [Nodezoo github]: https://github.com/rjrodger/nodezoo-github
 [Nodezoo npm]: https://github.com/rjrodger/nodezoo-npm
 [Concorda]: https://github.com/nearform/concorda
-[Vidi-Dashboard]: https://github.com/vidi-insights/vidi-dashboard
 [Lead]: https://github.com/mcdonnelldean
-[CoC]:
+[nearForm]: http://www.nearform.com/
+[Vidi]: https://github.com/vidi-insights/vidi-dashboard
+[CoC]: ./
 
 [docker]: ./
