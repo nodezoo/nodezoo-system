@@ -1,3 +1,4 @@
+![Nodezoo](https://github.com/nodezoo/nodezoo-org/blob/master/assets/logo-nodezoo.png)
 # Fuge-runner
 
 - __Lead:__ [Dean McDonnell][Lead]
@@ -117,6 +118,9 @@ npm run build
 
 ___Note:___ You can run infrastructure and services separately using `infrastructure.yml` or `services.yml` over `system.yml`. All three files are also compatible with `docker-compose` should you wish to run without fuge.
 
+## Contributing
+The [NodeZoo][] org encourages __open__ and __safe__ participation. If you feel you can help in any way, be it with documentation, examples, extra testing, or new features please get in touch.
+Before contributing please review our __[Code of Conduct]__
 
 ## License
 Copyright (c) 2016, Dean McDonnell and other contributors.
@@ -132,6 +136,6 @@ Licensed under [MIT][].
 [Lead]: https://github.com/mcdonnelldean
 [nearForm]: http://www.nearform.com/
 [Vidi]: https://github.com/vidi-insights/vidi-dashboard
-[CoC]: ./
+[Code of Conduct]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
 
 [docker]: ./
