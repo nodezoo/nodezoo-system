@@ -16,25 +16,17 @@ influx:
     - 8086:8086
     - 8083:8083
 
-nodezoo_mesh:
-  build: ../nodezoo/
-  container_name: nodezoo-mesh
+nodezoo_base:
+  build: ../nodezoo-base/
+  container_name: nodezoo_base
 
 nodezoo_metrics:
   build: ../nodezoo-metrics/
-  container_name: nodezoo-metrics
-
-nodezoo_github:
-  build: ../nodezoo-github/
-  container_name: nodezoo-github
+  container_name: nodezoo_metrics
 
 nodezoo_info:
   build: ../nodezoo-info/
   container_name: nodezoo-info
-
-nodezoo_npm:
-  build: ../nodezoo-npm/
-  container_name: nodezoo-npm
 
 nodezoo_search:
   build: ../nodezoo-search/
@@ -44,10 +36,14 @@ nodezoo_web:
   build: ../nodezoo-web/
   container_name: nodezoo-web
 
-concorda_web:
-  build: ../concorda-dashboard/
-  container_name: concorda-web
+nodezoo_npm:
+  build: ../nodezoo-npm/
+  container_name: nodezoo-npm
+
+nodezoo_github:
+  build: ../nodezoo-github/
+  container_name: nodezoo-github
 
 vidi_web:
   build: ../vidi-dashboard/
-  container_name: vidi-web
+  container_name: vidi_web
