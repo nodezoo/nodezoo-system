@@ -14,7 +14,7 @@ module.exports = {
   tail: false,
 
   // Restart microservices if they explode
-  restartOnError: true,
+  restartOnError: false,
 
   // Ignore all this junk
   exclude: [
