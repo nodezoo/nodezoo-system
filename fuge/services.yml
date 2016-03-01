@@ -1,0 +1,31 @@
+nodezoo_base:
+  build: ../node_modules/nodezoo-base/
+  container_name: nodezoo_base
+
+nodezoo_metrics:
+  build: ../node_modules/nodezoo-metrics/
+  container_name: nodezoo-metrics
+
+nodezoo_github:
+  build: ../node_modules/nodezoo-github/
+  container_name: nodezoo-github
+
+nodezoo_info:
+  build: ../node_modules/nodezoo-info/
+  container_name: nodezoo-info
+
+nodezoo_npm:
+  build: ../node_modules/nodezoo-npm/
+  container_name: nodezoo-npm
+
+nodezoo_search:
+  build: ../node_modules/nodezoo-search/
+  container_name: nodezoo-search
+
+nodezoo_web:
+  build: ../node_modules/nodezoo-web/
+  container_name: nodezoo-web
+
+vidi_web:
+  build: ../node_modules/vidi-dashboard/
+  container_name: vidi-web
