@@ -23,7 +23,7 @@
     "nodezoo-info": "github:nodezoo/nodezoo-info#live",
     "nodezoo-npm": "github:nodezoo/nodezoo-npm#live",
     "nodezoo-search": "github:nodezoo/nodezoo-search#live",
-    "nodezoo-metrics": "nodezoo/nodezoo-metrics",
+    "nodezoo-metrics": "nodezoo/nodezoo-metrics#live",
     "nodezoo-web": "github:nodezoo/nodezoo-web#live",
     "vidi-dashboard": "vidi-insights/vidi-dashboard"
   }
