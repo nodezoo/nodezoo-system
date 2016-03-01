@@ -67,11 +67,13 @@ Each dependent repo must be cloned into the same root directory. Your complete s
 --/nodezoo-npm
 --/concorda-dashboard
 --/vidi-dashboard
+--/nodezoo-base
 ```
 
 #### 3 a. Get the repos
 The links for each required repo are listed below,
 
+- [nodezoo-system][]
 - [nodezoo][]
 - [nodezoo-metrics][]
 - [nodezoo-web][]
@@ -81,6 +83,7 @@ The links for each required repo are listed below,
 - [nodezoo-npm][]
 - [concorda-dashboard][]
 - [vidi-dashboard][Vidi]
+- [nodezoo-base][]
 
 If you have git available at the command line you can clone each repo using commands in the form,
 
@@ -176,6 +179,8 @@ Licensed under [MIT][Lic].
 [nodezoo-github]: https://github.com/rjrodger/nodezoo-github
 [nodezoo-npm]: https://github.com/rjrodger/nodezoo-npm
 [concorda-dashboard]: https://github.com/nearform/concorda
+[nodezoo-base]: https://github.com/nodezoo/nodezoo-base
+[nodezoo-system]: https://github.com/nodezoo/nodezoo-system
 
 
 [Vidi]: https://github.com/vidi-insights/vidi-dashboard
