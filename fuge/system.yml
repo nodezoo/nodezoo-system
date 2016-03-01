@@ -26,23 +26,23 @@ nodezoo_metrics:
 
 nodezoo_info:
   build: ../node_modules/nodezoo-info/
-  container_name: nodezoo-info
+  container_name: nodezoo_info
 
 nodezoo_search:
   build: ../node_modules/nodezoo-search/
-  container_name: nodezoo-search
+  container_name: nodezoo_search
 
 nodezoo_web:
   build: ../node_modules/nodezoo-web/
-  container_name: nodezoo-web
+  container_name: nodezoo_web
 
 nodezoo_npm:
   build: ../node_modules/nodezoo-npm/
-  container_name: nodezoo-npm
+  container_name: nodezoo_npm
 
 nodezoo_github:
   build: ../node_modules/nodezoo-github/
-  container_name: nodezoo-github
+  container_name: nodezoo_github
 
 vidi_web:
   build: ../node_modules/vidi-dashboard/
