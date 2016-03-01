@@ -42,7 +42,7 @@ module.exports = {
     },
 
     nodezoo_metrics: {
-      run: 'node -r toolbag srv/metrics-dev.js --seneca.options.tag=nodezoo-metrics --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      run: 'node -r toolbag srv/dev.js --seneca.options.tag=nodezoo-metrics --seneca.options.debug.short_logs=true --seneca.log=type:act',
       build: 'npm install'
     },
 
