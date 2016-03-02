@@ -29,3 +29,7 @@ concorda_web:
 vidi_web:
   build: ../vidi-dashboard/
   container_name: vidi-web
+
+nodezoo_travis:
+  build: ../nodezoo-travis/
+  container_name: nodezoo_travis
