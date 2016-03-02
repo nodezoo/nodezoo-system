@@ -14,7 +14,7 @@ module.exports = {
   tail: false,
 
   // Restart microservices if they explode
-  restartOnError: true,
+  restartOnError: false,
 
   // Ignore all this junk
   exclude: [
@@ -68,16 +68,11 @@ module.exports = {
 
     nodezoo_web: {
       run: 'node -r toolbag server/start.js --seneca.options.tag=nodezoo-web --seneca.options.debug.short_logs=true --seneca.log=type:act',
-      build: 'npm install'
+      build: 'npm install;npm run build;'
     },
 
     vidi_web: {
       run: 'node server/start.js "monolith:true" --seneca.options.tag=vidi-web --seneca.options.debug.short_logs=true --seneca.log=type:act',
-      build: 'npm install; npm run build;'
-    },
-
-    concorda_web: {
-      run: 'node server/start.js --seneca.options.tag=concorda-web --seneca.options.debug.short_logs=true --seneca.log=type:act',
       build: 'npm install; npm run build;'
     },
     
