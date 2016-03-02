@@ -33,4 +33,3 @@ vidi_web:
 nodezoo_travis:
   build: ../node_modules/nodezoo-travis/
   container_name: nodezoo_travis
-  
