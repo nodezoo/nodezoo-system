@@ -22,6 +22,7 @@
     "nodezoo-github": "github:nodezoo/nodezoo-github#live",
     "nodezoo-info": "github:nodezoo/nodezoo-info#live",
     "nodezoo-npm": "github:nodezoo/nodezoo-npm#live",
+    "nodezoo-travis": "github:nodezoo/nodezoo-travis",
     "nodezoo-search": "github:nodezoo/nodezoo-search#live",
     "nodezoo-metrics": "nodezoo/nodezoo-metrics#live",
     "nodezoo-web": "github:nodezoo/nodezoo-web#live",
