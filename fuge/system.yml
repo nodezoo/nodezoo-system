@@ -47,3 +47,7 @@ nodezoo_github:
 vidi_web:
   build: ../node_modules/vidi-dashboard/
   container_name: vidi_web
+  
+nodezoo_travis:
+  build: ../node_modules/nodezoo-travis/
+  container_name: nodezoo_travis
