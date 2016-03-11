@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/nodezoo/nodezoo-system#readme",
   "dependencies": {
-    "nodezoo-base": "nodezoo/nodezoo-base",
+    "seneca-mesh-base": "0.0.x",
+    "concorda-dashboard": "github:concorda/concorda-dashboard",
     "nodezoo-github": "github:nodezoo/nodezoo-github",
     "nodezoo-info": "github:nodezoo/nodezoo-info",
     "nodezoo-npm": "github:nodezoo/nodezoo-npm",
