@@ -71,14 +71,14 @@ module.exports = {
       build: 'npm install;npm run build;'
     },
 
-    vidi_web: {
-      run: 'node server/start.js "monolith:true" --seneca.options.tag=vidi-web --seneca.options.debug.short_logs=true --seneca.log=type:act',
-      build: 'npm install; npm run build;'
-    },
-    
     nodezoo_travis: {
       run: 'node -r toolbag srv/travis-dev.js --seneca.options.tag=nodezoo-travis --seneca.options.debug.short_logs=true --seneca.log=type:act',
       build: 'npm install'
+    },
+
+    vidi_web: {
+      run: 'node server/start.js "monolith:true" --seneca.options.tag=vidi-web --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      build: 'npm install; npm run build;'
     }
   }
 }
