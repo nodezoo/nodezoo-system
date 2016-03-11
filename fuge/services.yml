@@ -6,21 +6,25 @@ nodezoo_metrics:
   build: ../node_modules/nodezoo-metrics/
   container_name: nodezoo_metrics
 
-nodezoo_github:
-  build: ../node_modules/nodezoo-github/
-  container_name: nodezoo_github
-
 nodezoo_info:
   build: ../node_modules/nodezoo-info/
   container_name: nodezoo_info
+
+nodezoo_search:
+  build: ../node_modules/nodezoo-search/
+  container_name: nodezoo_search
 
 nodezoo_npm:
   build: ../node_modules/nodezoo-npm/
   container_name: nodezoo_npm
 
-nodezoo_search:
-  build: ../node_modules/nodezoo-search/
-  container_name: nodezoo_search
+nodezoo_github:
+  build: ../node_modules/nodezoo-github/
+  container_name: nodezoo_github
+
+nodezoo_travis:
+  build: ../node_modules/nodezoo-travis/
+  container_name: nodezoo_travis
 
 nodezoo_web:
   build: ../node_modules/nodezoo-web/
@@ -29,7 +33,3 @@ nodezoo_web:
 vidi_web:
   build: ../node_modules/vidi-dashboard/
   container_name: vidi_web
-
-nodezoo_travis:
-  build: ../node_modules/nodezoo-travis/
-  container_name: nodezoo_travis
