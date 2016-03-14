@@ -18,14 +18,15 @@
   },
   "homepage": "https://github.com/nodezoo/nodezoo-system#readme",
   "dependencies": {
-    "nodezoo-base": "nodezoo/nodezoo-base",
+    "concorda-dashboard": "github:concorda/concorda-dashboard",
     "nodezoo-github": "github:nodezoo/nodezoo-github",
     "nodezoo-info": "github:nodezoo/nodezoo-info",
-    "nodezoo-npm": "github:nodezoo/nodezoo-npm",
-    "nodezoo-travis": "github:nodezoo/nodezoo-travis",
-    "nodezoo-search": "github:nodezoo/nodezoo-search",
     "nodezoo-metrics": "nodezoo/nodezoo-metrics",
+    "nodezoo-npm": "github:nodezoo/nodezoo-npm",
+    "nodezoo-search": "github:nodezoo/nodezoo-search",
+    "nodezoo-travis": "github:nodezoo/nodezoo-travis",
     "nodezoo-web": "github:nodezoo/nodezoo-web",
+    "seneca-mesh-base": "0.0.x",
     "vidi-dashboard": "vidi-insights/vidi-dashboard"
   }
 }
