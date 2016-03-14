@@ -40,6 +40,8 @@ npm:
 github:
   build: ../node_modules/nodezoo-github/
   container_name: github
+  environment:
+    - TOKEN=7333472e8f1653fcf73a23ac2ee1ad21fe34e328
 
 travis:
   build: ../node_modules/nodezoo-travis/
@@ -53,16 +55,11 @@ concorda:
   build: ../node_modules/concorda-dashboard/
   container_name: concorda
   environment:
-    - SERVICE_HOST=0.0.0.0
     - PORT=3050
-    - EXTERNAL_API=false
-  env_file:
-    - production.env
 
 vidi:
   build: ../node_modules/vidi-dashboard/
   container_name: vidi
   environment:
-    - HOST=0.0.0.0
     - PORT=3000
     - START=concorda:true
