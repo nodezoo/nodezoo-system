@@ -41,7 +41,7 @@ github:
   build: ../node_modules/nodezoo-github/
   container_name: github
   environment:
-    - TOKEN=7333472e8f1653fcf73a23ac2ee1ad21fe34e328
+    - TOKEN=YOUR_GITHUB_TOKEN_HERE
 
 travis:
   build: ../node_modules/nodezoo-travis/
