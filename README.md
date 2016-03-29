@@ -5,18 +5,14 @@
 - __Lead:__ [Dean McDonnell][Lead]
 - __Sponsor:__ [nearForm][Sponsor]
 
-This repo contains all the required config to spin up a [Nodezoo][] system with [Vidi][] and
-[Concorda][] attached. The included services represents a production level microservices system
-and includes monitoring and user management. Follow the instructions below to set up the system
-on your machine.
+This repo contains all the required config to spin up a [Nodezoo][] system. The included services 
+represents a production level microservices system and includes monitoring and user management. 
+Follow the instructions below to set up the system on your machine.
 
 Nodezoo is a search engine for node modules. It is an example of a real-world service built using
 Node.js microservices. Each microservice is published in its own github repository along with all
 of the necessary config to run the system locally or live . The codebase is intended to be used as
 an example, and as a starting point for your own projects.
-
-Nodezoo comes with two additional sub systems. These are Vidi, a metrics collection and charting
-service and Concorda, a user management system.
 
 ## Installation Guide
 
@@ -96,9 +92,6 @@ __Note:__ Nodezoo uses meshing technology to auto bind microservices without the
 numbers. However, web apps are always available on the following ports.
 
 - Nodezoo - `8000`
-- Vidi - `3000`
-- Concorda - `3050`
-
 
 ## Contributing
 The [NodeZoo][] org encourages __open__ and __safe__ participation.
