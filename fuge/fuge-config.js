@@ -1,19 +1,17 @@
 'use strict'
 
 module.exports = {
-
   // tels fuge to proxy connections to docker. Allows
   // you to specifiy localhost in your microservices.
   proxy: 'docker',
 
-  // Run docker containers and images if
-  // they are in the yml file passed in
+  // Run docker containers if an image is specified.
   runDocker: true,
 
-  // Log to file, not console
+  // Log to file, not console logs are found in ./logs
   tail: false,
 
-  // Restart microservices if they explode
+  // Restart microservices if they explode, lets say no.
   restartOnError: false,
 
   // Ignore all this junk
@@ -28,57 +26,44 @@ module.exports = {
     '**/*.log'
   ],
 
-  // We override the docker files here so we can keep them geared towards
-  // release. It's a nice slight of hand to get local / release config easy.
+  // We override the docker files here so we can keep them geared towards release.
+  // Notice we don't use npm to start, this is because npm doesn't like when we
+  // want to be able to run multiple copies of our services, so we stick to the
+  // command we would have called via npm run start.
   overrides: {
-
-    // notice we don't use npm to start, this is because npm doesn't like that
-    // we want to be able to run multiple copies of our services, so we stick
-    // use the command we would have called via npm run start
-
-    nodezoo_base: {
-      run: 'node -r toolbag srv/base-dev.js --seneca.options.tag=nodezoo-base --seneca.options.debug.short_logs=true --seneca.log=type:act',
-      build: 'npm install'
-    },
-
     nodezoo_metrics: {
-      run: 'node -r toolbag srv/metrics-dev.js --seneca.options.tag=nodezoo-metrics --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      run: 'node -r toolbag srv/metrics-dev.js --seneca.log=type:act',
       build: 'npm install'
     },
 
     nodezoo_info: {
-      run: 'node -r toolbag srv/info-dev.js --seneca.options.tag=nodezoo-info --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      run: 'node -r toolbag srv/info-dev.js --seneca.log=type:act',
       build: 'npm install'
     },
 
     nodezoo_search: {
-      run: 'node -r toolbag srv/search-dev.js --seneca.options.tag=nodezoo-search --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      run: 'node -r toolbag srv/search-dev.js --seneca.log=type:act',
       build: 'npm install'
     },
 
     nodezoo_github: {
-      run: 'node -r toolbag srv/github-dev.js --seneca.options.tag=nodezoo-npm --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      run: 'node -r toolbag srv/github-dev.js --seneca.log=type:act',
       build: 'npm install'
     },
 
     nodezoo_npm: {
-      run: 'node -r toolbag srv/npm-dev.js --seneca.options.tag=nodezoo-search --seneca.options.debug.short_logs=true --seneca.log=type:act',
+      run: 'node -r toolbag srv/npm-dev.js --seneca.log=type:act',
+      build: 'npm install'
+    },
+
+    nodezoo_travis: {
+      run: 'node -r toolbag srv/travis-dev.js --seneca.log=type:act',
       build: 'npm install'
     },
 
     nodezoo_web: {
-      run: 'node -r toolbag server/start.js --seneca.options.tag=nodezoo-web --seneca.options.debug.short_logs=true --seneca.log=type:act',
-      build: 'npm install;npm run build;'
-    },
-
-    nodezoo_travis: {
-      run: 'node -r toolbag srv/travis-dev.js --seneca.options.tag=nodezoo-travis --seneca.options.debug.short_logs=true --seneca.log=type:act',
-      build: 'npm install'
-    },
-
-    vidi_web: {
-      run: 'node server/start.js "monolith:true" --seneca.options.tag=vidi-web --seneca.options.debug.short_logs=true --seneca.log=type:act',
-      build: 'npm install; npm run build;'
+      run: 'node -r toolbag server/start.js --seneca.log=type:act',
+      build: 'npm install; npm run build'
     }
   }
 }
