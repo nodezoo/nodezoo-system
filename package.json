@@ -1,24 +1,10 @@
 {
   "name": "nodezoo-system",
   "version": "0.0.1",
-  "description": "Microservice-based search engine for node projects",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nodezoo/nodezoo-system.git"
-  },
-  "keywords": [
-    "fuge",
-    "seneca",
-    "npm"
-  ],
+  "description": "A fuge config for NodeZoo",
+  "private": "true",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nodezoo/nodezoo-system/issues"
-  },
-  "homepage": "https://github.com/nodezoo/nodezoo-system#readme",
   "dependencies": {
-    "concorda-dashboard": "github:concorda/concorda-dashboard",
     "nodezoo-github": "github:nodezoo/nodezoo-github",
     "nodezoo-info": "github:nodezoo/nodezoo-info",
     "nodezoo-metrics": "nodezoo/nodezoo-metrics",
@@ -26,7 +12,6 @@
     "nodezoo-search": "github:nodezoo/nodezoo-search",
     "nodezoo-travis": "github:nodezoo/nodezoo-travis",
     "nodezoo-web": "github:nodezoo/nodezoo-web",
-    "seneca-mesh-base": "0.0.x",
-    "vidi-dashboard": "vidi-insights/vidi-dashboard"
+    "seneca-mesh-base": "0.0.2"
   }
 }
