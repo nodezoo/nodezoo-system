@@ -31,6 +31,11 @@ module.exports = {
   // want to be able to run multiple copies of our services, so we stick to the
   // command we would have called via npm run start.
   overrides: {
+    nodezoo_base: {
+      run: 'node -r toolbag srv/base-dev.js --seneca.log=type:act',
+      build: 'npm install'
+    },
+
     nodezoo_metrics: {
       run: 'node -r toolbag srv/metrics-dev.js --seneca.log=type:act',
       build: 'npm install'

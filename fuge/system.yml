@@ -21,9 +21,9 @@ influx_db:
     - 8086:8086
     - 8083:8083
 
-nodezoo_mesh:
-  build: ../node_modules/seneca-mesh-base/
-  container_name: nodezoo_mesh
+nodezoo_base:
+  build: ../node_modules/nodezoo-base/
+  container_name: nodezoo_base
 
 nodezoo_metrics:
   build: ../node_modules/nodezoo-metrics/
@@ -45,8 +45,8 @@ nodezoo_github:
   build: ../node_modules/nodezoo-github/
   container_name: nodezoo_github
   environment:
-    - TOKEN=bf581893518db3c184e42777eb6c429fb44262a0
-
+    - TOKEN=YOUR_TOKEN
+    
 nodezoo_travis:
   build: ../node_modules/nodezoo-travis/
   container_name: nodezoo_travis
