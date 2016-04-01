@@ -12,6 +12,6 @@
     "nodezoo-search": "github:nodezoo/nodezoo-search",
     "nodezoo-travis": "github:nodezoo/nodezoo-travis",
     "nodezoo-web": "github:nodezoo/nodezoo-web",
-    "seneca-mesh-base": "0.0.2"
+    "nodezoo-base": "github:nodezoo/nodezoo-base"
   }
 }
