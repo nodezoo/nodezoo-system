@@ -6,7 +6,7 @@ module.exports = {
   proxy: 'docker',
 
   // Run docker containers if an image is specified.
-  runDocker: true,
+  runDocker: false,
 
   // Log to file, not console logs are found in ./logs
   tail: false,
@@ -32,42 +32,37 @@ module.exports = {
   // command we would have called via npm run start.
   overrides: {
     nodezoo_base: {
-      run: 'node -r toolbag srv/base-dev.js --seneca.log=type:act',
-      build: 'npm install'
-    },
-
-    nodezoo_metrics: {
-      run: 'node -r toolbag srv/metrics-dev.js --seneca.log=type:act',
+      run: 'node -r toolbag srv/base-dev.js',
       build: 'npm install'
     },
 
     nodezoo_info: {
-      run: 'node -r toolbag srv/info-dev.js --seneca.log=type:act',
+      run: 'node -r toolbag srv/info-dev.js',
       build: 'npm install'
     },
 
     nodezoo_search: {
-      run: 'node -r toolbag srv/search-dev.js --seneca.log=type:act',
+      run: 'node -r toolbag srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_github: {
-      run: 'node -r toolbag srv/github-dev.js --seneca.log=type:act',
+      run: 'node -r toolbag srv/github-dev.js',
       build: 'npm install'
     },
 
     nodezoo_npm: {
-      run: 'node -r toolbag srv/npm-dev.js --seneca.log=type:act',
+      run: 'node -r toolbag srv/npm-dev.js',
       build: 'npm install'
     },
 
     nodezoo_travis: {
-      run: 'node -r toolbag srv/travis-dev.js --seneca.log=type:act',
+      run: 'node -r toolbag srv/travis-dev.js',
       build: 'npm install'
     },
 
     nodezoo_web: {
-      run: 'node -r toolbag server/start.js --seneca.log=type:act',
+      run: 'node -r toolbag server/start.js',
       build: 'npm install; npm run build'
     }
   }

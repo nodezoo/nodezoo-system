@@ -5,12 +5,12 @@
 - __Lead:__ [Dean McDonnell][Lead]
 - __Sponsor:__ [nearForm][Sponsor]
 
-This repo contains all the required config to spin up a [Nodezoo][] system. The included services 
-represents a production level microservices system and includes monitoring and user management. 
+This repo contains all the required config to spin up a [Nodezoo][] system. The included services
+represents a production level micro-services system and includes monitoring and user management.
 Follow the instructions below to set up the system on your machine.
 
 Nodezoo is a search engine for node modules. It is an example of a real-world service built using
-Node.js microservices. Each microservice is published in its own github repository along with all
+Node.js micro-services. Each micro-service is published in its own github repository along with all
 of the necessary config to run the system locally or live . The codebase is intended to be used as
 an example, and as a starting point for your own projects.
 
@@ -35,7 +35,7 @@ docker ps -a
 If you are prompted with an error saying cannot connect to docker daemon, run the following command:
 
 ```
-docker-machine start default // your machine name may not be default use docker-machine ls to confirm
+docker-machine start default
 ```
 
 If this command doesn't return a TLS connection issue you are good to go otherwise the following
@@ -77,21 +77,23 @@ In the `./nodezoo-system` folder run,
 fuge build fuge/system.yml
 ```
 
-### 6. Start the system
+### 6. Start the infrastructure
+In the `./nodezoo-system` folder, in a second terminal window run,
+
+```
+docker-compose -f fuge/infrastructure.yml up
+```
+
+### 7. Start the system
 In the `./nodezoo-system` folder run,
 
 ```
 fuge shell fuge/system.yml
 ```
 
-___Note:___ You can run infrastructure and services separately using `infrastructure.yml` or
-`services.yml` over `system.yml`. All three files are also compatible with `docker-compose` should
-you wish to run without fuge.
+__Note:__ You must run infrastructure using `infrastructure.yml` __before__ running the system.
 
-__Note:__ Nodezoo uses meshing technology to auto bind microservices without the need for port
-numbers. However, web apps are always available on the following ports.
-
-- Nodezoo - `8000`
+__Note:__ The Nodezoo web app is available at `8000`.
 
 ## Contributing
 The [NodeZoo][] org encourages __open__ and __safe__ participation.

@@ -4,19 +4,3 @@ elastic_search:
   ports:
     - 9200:9200
     - 9300:9300
-
-redis_db:
-  image: sameersbn/redis:latest
-  restart: always
-  ports:
-    - 6379:6379
-
-influx_db:
-  image: tutum/influxdb:0.9
-  environment:
-    - PRE_CREATE_DB="vidi_metrics"
-    - ADMIN_USER="metrics"
-    - INFLUXDB_INIT_PWD="metrics"
-  ports:
-    - 8086:8086
-    - 8083:8083
