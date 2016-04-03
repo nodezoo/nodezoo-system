@@ -19,4 +19,4 @@ mochahelper.js
 dist
 .tmp
 .sass-cache
-fuge/system.env
+fuge/env/system.env
