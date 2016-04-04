@@ -73,7 +73,7 @@ npm install
 
 ### 5. Build the system
 
-In the `./nodezoo-system` directory, create a `system.env` file
+In the `./nodezoo-system/env` directory, create a `system.env` file
 
 Acquire and Set Github API authorization token in `system.env`; use `sample.env` for reference only
 
