@@ -37,7 +37,7 @@ module.exports = {
     },
 
     nodezoo_info: {
-      run: 'node -r toolbag srv/info-dev.js',
+      run: 'node -r toolbag srv/start.js',
       build: 'npm install'
     },
 
@@ -47,17 +47,17 @@ module.exports = {
     },
 
     nodezoo_github: {
-      run: 'node -r toolbag srv/github-dev.js',
+      run: 'node -r toolbag srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_npm: {
-      run: 'node -r toolbag srv/npm-dev.js',
+      run: 'node -r toolbag srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_travis: {
-      run: 'node -r toolbag srv/travis-dev.js',
+      run: 'node -r toolbag srv/start.js',
       build: 'npm install'
     },
 
