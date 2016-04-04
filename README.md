@@ -22,6 +22,7 @@ To make use of this repo you need to have fuge installed, you can do this via np
 ```
 npm install -g fuge
 ```
+__Note:__ Fuge 0.6.1 or later is required
 
 ### 2. Install Docker
 You need the ability to run docker and for it to be active in your session to run this system.
@@ -82,14 +83,17 @@ In the `./nodezoo-system` folder run,
 fuge build fuge/system.yml
 ```
 
-### 6. Start the infrastructure
+### 6. Insert GitHub token
+For the GitHub service to work you must create the file system.env in the fuge/env directory and copy the entire contents of sample.env to it. You then insert your GitHub personal access token into system.env.
+
+### 7. Start the infrastructure
 In the `./nodezoo-system` folder, in a second terminal window run,
 
 ```
 docker-compose -f fuge/infrastructure.yml up
 ```
 
-### 7. Start the system
+### 8. Start the system
 In the `./nodezoo-system` folder run,
 
 ```
