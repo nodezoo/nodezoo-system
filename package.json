@@ -5,12 +5,12 @@
   "private": "true",
   "license": "MIT",
   "dependencies": {
-    "nodezoo-base": "github:nodezoo/nodezoo-base",
-    "nodezoo-github": "github:nodezoo/nodezoo-github",
-    "nodezoo-info": "github:nodezoo/nodezoo-info",
-    "nodezoo-npm": "github:nodezoo/nodezoo-npm",
-    "nodezoo-search": "github:nodezoo/nodezoo-search",
-    "nodezoo-travis": "github:nodezoo/nodezoo-travis",
-    "nodezoo-web": "github:nodezoo/nodezoo-web"
+    "nodezoo-base": "6.0.0",
+    "nodezoo-github": "6.0.0",
+    "nodezoo-info": "6.0.0",
+    "nodezoo-npm": "6.0.0",
+    "nodezoo-search": "6.0.0",
+    "nodezoo-travis": "6.0.0",
+    "nodezoo-web": "6.0.0"
   }
 }
