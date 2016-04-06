@@ -1,6 +1,6 @@
 {
   "name": "nodezoo-system",
-  "version": "0.0.1",
+  "version": "6.0.0",
   "description": "A fuge config for NodeZoo",
   "private": "true",
   "license": "MIT",
