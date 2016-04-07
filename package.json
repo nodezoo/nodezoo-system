@@ -4,8 +4,8 @@
   "description": "A fuge config for NodeZoo",
   "license": "MIT",
   "dependencies": {
-    "nodezoo-base": "6.0.0",
-    "nodezoo-github": "6.0.0",
+    "nodezoo-base": "7.0.0",
+    "nodezoo-github": "6.1.0",
     "nodezoo-info": "6.0.0",
     "nodezoo-npm": "6.0.0",
     "nodezoo-search": "6.0.0",
