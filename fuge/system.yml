@@ -4,7 +4,12 @@ elastic_search:
   ports:
     - 9200:9200
     - 9300:9300
-    
+
+redis:
+  image: redis
+  ports:
+    - 6379:6379
+
 nodezoo_base:
   build: ../node_modules/nodezoo-base/
   container_name: nodezoo_base
