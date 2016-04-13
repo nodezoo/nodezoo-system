@@ -102,6 +102,17 @@ __Note:__ You must run infrastructure using `infrastructure.yml` __before__ runn
 
 __Note:__ The Nodezoo web app is available at `8000`.
 
+## Development
+
+To set up a development environment with cloned copies of all the repositories run :
+
+```
+make dev-setup
+```
+
+All the services will be checked out into `./services` and will use `npm link` to place symlinks
+in the node_modules folder.
+
 ## Contributing
 The [NodeZoo][] org encourages __open__ and __safe__ participation.
 

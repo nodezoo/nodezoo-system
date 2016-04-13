@@ -1,5 +1,7 @@
-## 7 April - 7.0.0
+## NO VERSION YET
+* Introduce a Makefile with a `make dev-setup` target to initialize npm links.
 
+## 7 April - 7.0.0
 * **BREAKING** Updated fuge-config.js to correspond to nodezoo_base base-dev.js change to start.js.
 * Added CHANGELOG.md
 * Updated nodezoo-github to 6.1.0
