@@ -32,37 +32,37 @@ module.exports = {
   // command we would have called via npm run start.
   overrides: {
     nodezoo_base: {
-      run: 'node -r toolbag srv/start.js',
+      run: 'node srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_info: {
-      run: 'node -r toolbag srv/start.js',
+      run: 'node srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_search: {
-      run: 'node -r toolbag srv/start.js',
+      run: 'node srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_github: {
-      run: 'node -r toolbag srv/start.js',
+      run: 'node srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_npm: {
-      run: 'node -r toolbag srv/start.js',
+      run: 'node srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_travis: {
-      run: 'node -r toolbag srv/start.js',
+      run: 'node srv/start.js',
       build: 'npm install'
     },
 
     nodezoo_web: {
-      run: 'node -r toolbag server/start.js',
+      run: 'node server/start.js',
       build: 'npm install; npm run build'
     }
   }

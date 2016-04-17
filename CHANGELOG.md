@@ -1,5 +1,6 @@
 ## NO VERSION YET
 * Introduce a Makefile with a `make dev-setup` target to initialize npm links.
+* toolbag removed from fuge config.
 
 ## 7 April - 7.0.0
 * **BREAKING** Updated fuge-config.js to correspond to nodezoo_base base-dev.js change to start.js.
