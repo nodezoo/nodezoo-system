@@ -5,14 +5,28 @@
 - __Lead:__ [Dean McDonnell][Lead]
 - __Sponsor:__ [nearForm][Sponsor]
 
-This repo contains all the required config to spin up a [Nodezoo][] system. The included services
-represents a production level micro-services system and includes monitoring and user management.
-Follow the instructions below to set up the system on your machine.
-
-Nodezoo is a search engine for node modules. It is an example of a real-world service built using
+Nodezoo is a search engine for node modules. The full system currently fetches data from NPM, Github and Travis-CI. It is an example of a real-world service built using
 Node.js micro-services. Each micro-service is published in its own github repository along with all
 of the necessary config to run the system locally or live . The codebase is intended to be used as
 an example, and as a starting point for your own projects.
+
+This repo contains all the required config to spin up a [Nodezoo][] system. The included services
+represents a production level micro-services system.
+Follow the instructions below to set up the system on your machine.
+
+#### Nodezoo Search Page
+![Search Page][searchPage]
+- The search page shows a minimal, but adequate, amount of information about a module.
+  - Module description
+  - If it exists on NPM, GitHub or Travis-CI then their respective icons are shown, accompanied by its most recent build status if available
+  - The amount of watchers, stars and forks the modules repository has on GitHub
+
+#### Nodezoo Information Page
+![Information Page][infoPage]
+- The information page is much more detailed than the search page, neatly displaying all of the important information regarding a module. If there is no NPM, GitHub or Travis-CI information available then the corresponding tile will not be visible. The three micro-services used to retrieve the data are:
+  - [nodezoo-npm][]
+  - [nodezoo-github][]
+  - [nodezoo-travis][]
 
 ## Installation Guide
 
@@ -131,10 +145,12 @@ Licensed under [MIT][Lic].
 [Sponsor]: http://www.nearform.com/
 [CoC]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
 [Lic]: ./LICENSE
-
 [Nodezoo]: https://github.com/rjrodger/nodezoo
 [Concorda]: https://github.com/nearform/concorda
 [Vidi]: https://github.com/vidi-insights/vidi-dashboard
-
-
-[docker]: ./
+[docker]: https://docs.docker.com/engine/installation/
+[searchPage]: https://github.com/nodezoo/nodezoo-org/blob/master/assets/search-page.png
+[infoPage]: https://github.com/nodezoo/nodezoo-org/blob/master/assets/info-page.png
+[nodezoo-npm]: https://github.com/nodezoo/nodezoo-npm
+[nodezoo-github]: https://github.com/nodezoo/nodezoo-github
+[nodezoo-travis]: https://github.com/nodezoo/nodezoo-travis
