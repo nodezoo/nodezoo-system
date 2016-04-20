@@ -10,6 +10,7 @@
     "nodezoo-npm": "6.0.0",
     "nodezoo-search": "6.0.0",
     "nodezoo-travis": "6.0.0",
-    "nodezoo-web": "6.0.0"
+    "nodezoo-web": "6.0.0",
+    "nodezoo-updater": "1.0.0"
   }
 }
