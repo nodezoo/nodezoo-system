@@ -53,7 +53,7 @@ nodezoo_travis:
   restart: always
 
 nodezoo_updater:
-  build: ../node_modules/nodezoo-npm-update/
+  build: ../node_modules/nodezoo-updater/
   container_name: nodezoo_updater
   env_file: ../system.env
   net: host
