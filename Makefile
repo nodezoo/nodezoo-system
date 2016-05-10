@@ -1,7 +1,7 @@
 
 PACKAGES=nodezoo-base nodezoo-github nodezoo-info \
 				 nodezoo-npm nodezoo-search nodezoo-travis \
-				 nodezoo-web
+				 nodezoo-web nodezoo-updater nodezoo-dequeue
 
 SERVICES=$(foreach service, $(PACKAGES), services/$(service))
 MODULES=$(foreach module, $(PACKAGES), node_modules/$(module))
