@@ -52,6 +52,18 @@ nodezoo_travis:
   net: host
   restart: always
 
+nodezoo_updater:
+  build: ../node_modules/nodezoo-updater/
+  container_name: nodezoo_updater
+  env_file: ../system.env
+  net: host
+
+nodezoo_dequeue:
+  build: ../node_modules/nodezoo-dequeue/
+  container_name: nodezoo_dequeue
+  env_file: ../system.env
+  net: host
+
 nodezoo_web:
   build: ../node_modules/nodezoo-web/
   container_name: nodezoo_web

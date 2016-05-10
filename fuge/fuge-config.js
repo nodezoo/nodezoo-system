@@ -61,6 +61,16 @@ module.exports = {
       build: 'npm install'
     },
 
+    nodezoo_updater: {
+      run: 'node srv/start.js',
+      build: 'npm install'
+    },
+
+    nodezoo_dequeue: {
+      run: 'node srv/start.js',
+      build: 'npm install'
+    },
+
     nodezoo_web: {
       run: 'node server/start.js',
       build: 'npm install; npm run build'
