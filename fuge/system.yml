@@ -75,12 +75,14 @@ nodezoo_updater:
   container_name: nodezoo_updater
   env_file: ../system.env
   net: host
+  restart: always
 
 nodezoo_dequeue:
   build: ../node_modules/nodezoo-dequeue/
   container_name: nodezoo_dequeue
   env_file: ../system.env
   net: host
+  restart: always
 
 nodezoo_web:
   build: ../node_modules/nodezoo-web/
