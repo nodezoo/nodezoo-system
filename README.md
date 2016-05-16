@@ -41,7 +41,14 @@ __Note:__ Fuge 0.6.1 or later is required
 ### 2. Install Docker
 You need the ability to run docker and for it to be active in your session to run this system.
 Please see Docker's [instructions][docker] for more detail on how to install it for your system. To
-test if docker is available for fuge to make use of, type the following into your terminal,
+test if docker is available for fuge to make use of, first type the following command to make the docker cli and daemon play nicely,
+
+```
+eval $(docker-machine env default)
+```
+
+Now, lets check if docker is available.
+
 
 ```
 docker ps -a
@@ -53,15 +60,7 @@ If you are prompted with an error saying cannot connect to docker daemon, run th
 docker-machine start default
 ```
 
-If this command doesn't return a TLS connection issue you are good to go otherwise the following
-command should connect Docker to your session,
-
-```
-eval $(docker-machine env default)
-```
-
-Try the docker command above again, you should now see some form of output and not the original TLS
-error.
+If this command doesn't return a TLS connection issue you are good to go.
 
 Running this system causes containers to be created and ran via docker. If you need to stop and/or
 remove docker containers, the commands are as follows
@@ -111,6 +110,8 @@ In the `./nodezoo-system` folder run,
 ```
 fuge shell fuge/system.yml
 ```
+
+Once the fuge shell opens, type aptly named `start` command to launch the infastructure.
 
 __Note:__ You must run infrastructure using `infrastructure.yml` __before__ running the system.
 
