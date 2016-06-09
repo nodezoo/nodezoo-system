@@ -9,9 +9,6 @@ cache:
   directories:
     - node_modules
 
-after_script:
-  - npm run cov
-
 env:
   - CXX=g++-4.8
 
