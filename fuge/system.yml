@@ -92,3 +92,12 @@ nodezoo_web:
   restart: always
   ports:
     - 8000:8000
+
+nodezoo_coveralls:
+  build: ../node_modules/nodezoo-coveralls/
+  container_name: nodezoo_coveralls
+  env_file: ../system.env
+  net: host
+  restart: always
+
+
