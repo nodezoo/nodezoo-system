@@ -74,6 +74,12 @@ module.exports = {
     nodezoo_web: {
       run: 'node server/start.js',
       build: 'npm install; npm run build'
+    },
+
+    nodezoo_coveralls: {
+      run: 'node srv/start.js',
+      build: 'npm install'
     }
+
   }
 }
