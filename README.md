@@ -14,6 +14,8 @@ This repo contains all the required config to spin up a [Nodezoo][] system. The 
 represents a production level micro-services system.
 Follow the instructions below to set up the system on your machine.
 
+For more information please visit [NodeZoo Wiki](https://github.com/nodezoo/nodezoo-docs)
+
 #### Nodezoo Search Page
 ![Search Page][searchPage]
 - The search page shows a minimal, but adequate, amount of information about a module.
