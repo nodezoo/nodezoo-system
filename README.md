@@ -1,5 +1,10 @@
 ![Nodezoo][Logo]
 
+[![npm version][npm-badge]][npm-url]
+[![npm downloads][npm-downloads-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+[![Gitter][gitter-badge]][gitter-url]
+
 # nodezoo-system
 
 - __Lead:__ [Dean McDonnell][Lead]
@@ -98,11 +103,19 @@ Licensed under [MIT][Lic].
 
 
 [Logo]: https://raw.githubusercontent.com/nodezoo/nodezoo-org/master/assets/logo-nodezoo.png
+
+[npm-badge]: https://badge.fury.io/js/nodezoo-system.svg
+[npm-url]: https://badge.fury.io/js/nodezoo-system
+[npm-downloads-badge]: https://img.shields.io/npm/dm/nodezoo-system.svg?maxAge=2592000
+[travis-badge]: https://travis-ci.org/nodezoo/nodezoo-system.svg?branch=master
+[travis-url]: https://travis-ci.org/nodezoo/nodezoo-system
+[gitter-badge]: https://badges.gitter.im/Join%20Chat.svg
+[gitter-url]: https://gitter.im/nodezoo/nodezoo-org
+
 [Lead]: https://github.com/mcdonnelldean
 [Sponsor]: http://www.nearform.com/
 [CoC]: https://github.com/nodezoo/nodezoo-org/blob/master/CoC.md
 [Lic]: ./LICENSE
-
 [Nodezoo]: https://github.com/rjrodger/nodezoo
 [Concorda]: https://github.com/nearform/concorda
 [Vidi]: https://github.com/vidi-insights/vidi-dashboard
