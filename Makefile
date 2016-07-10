@@ -10,7 +10,7 @@ MODULES=$(foreach module, $(PACKAGES), node_modules/$(module))
 .PHONY: clean dev-setup update
 
 $(SERVICES):
-	-git clone git@github.com:nodezoo/$(@F).git $@
+	-git clone https://github.com/nodezoo/$(@F).git $@
 
 $(MODULES): $(SERVICES)
 	cd services/$(@F); npm link; cd ..
