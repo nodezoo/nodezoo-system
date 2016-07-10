@@ -1,4 +1,5 @@
 ## NO VERSION YET
+* Makefiles use https over git
 * Introduce a Makefile with a `make dev-setup` target to initialize npm links.
 * toolbag removed from fuge config.
 
