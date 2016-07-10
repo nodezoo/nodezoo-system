@@ -13,7 +13,7 @@
     "nodezoo-web": "6.1.x",
     "nodezoo-updater": "1.0.x",
     "nodezoo-dequeue": "1.0.x",
-    "nodezoo-coveralls": "1.x.x"
+    "nodezoo-coveralls": "3.x.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
