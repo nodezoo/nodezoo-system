@@ -4,16 +4,17 @@
   "description": "A fuge config for NodeZoo",
   "license": "MIT",
   "dependencies": {
+    "artillery": "^1.5.2",
     "nodezoo-base": "7.0.x",
+    "nodezoo-coveralls": "3.x.x",
+    "nodezoo-dequeue": "1.0.x",
     "nodezoo-github": "6.3.x",
     "nodezoo-info": "6.0.x",
     "nodezoo-npm": "7.1.x",
     "nodezoo-search": "6.1.x",
     "nodezoo-travis": "7.1.x",
-    "nodezoo-web": "6.1.x",
     "nodezoo-updater": "1.0.x",
-    "nodezoo-dequeue": "1.0.x",
-    "nodezoo-coveralls": "3.x.x"
+    "nodezoo-web": "6.1.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
