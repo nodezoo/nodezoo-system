@@ -1,0 +1,32 @@
+fuge_global:
+  tail: true
+  monitor_excludes:
+    - '**/node_modules/**'
+    - '**/.git/**'
+    - '**/*.log'
+    - '**/data/**'
+web:
+  type: node
+  path: ../../nodezoo-web/srv
+  run: node web-dev.js
+search:
+  type: node
+  path: ../../nodezoo-search/srv
+  run: node search-dev.js
+info:
+  type: node
+  path: ../../nodezoo-info/srv
+  run: node info-dev.js
+npm:
+  type: node
+  path: ../../nodezoo-npm/srv
+  run: node npm-dev.js
+github:
+  type: node
+  path: ../../nodezoo-github/srv
+  run: node github-dev.js
+suggest:
+  type: node
+  path: ../../nodezoo-suggest/srv
+  run: node suggest-dev.js
+

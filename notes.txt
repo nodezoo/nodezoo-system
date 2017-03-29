@@ -8,3 +8,6 @@ docker run -d --restart=always -p 8100:80 -p 2003-2004:2003-2004 -p 2023-2024:20
 docker run -d --restart=always -p 8100:80 -p 2003-2004:2003-2004 -p 2023-2024:2023-2024 -p 8125:8125/udp  -p 8126:8126  nodezoo-graphite-statsd
 
 
+docker run -d -p 9200:9200 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+
+

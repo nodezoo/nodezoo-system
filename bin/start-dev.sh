@@ -2,4 +2,5 @@
 node ../../nodezoo-web/srv/web-dev.js &
 node ../../nodezoo-info/srv/info-dev.js &
 node ../../nodezoo-npm/srv/npm-dev.js &
+node ../../nodezoo-suggest/srv/npm-suggest.js &
 node ../../nodezoo-search/srv/search-dev.js &

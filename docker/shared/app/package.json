@@ -1,0 +1,32 @@
+{
+  "name": "nodezoo-web",
+  "version": "5.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjrodger/nodezoo-web.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjrodger/nodezoo-web/issues"
+  },
+  "homepage": "https://github.com/rjrodger/nodezoo-web",
+  "dependencies": {
+    "chairo": "3.0.0",
+    "handlebars": "4.0.6",
+    "hapi": "16.1.0",
+    "inert": "4.1.0",
+    "seneca": "3.3.0",
+    "seneca-balance-client": "0.6.0",
+    "seneca-mesh": "0.10.0",
+    "seneca-msgstats": "0.2.0",
+    "seneca-repl": "0.3.0",
+    "seneca-zipkin-tracer": "0.1.0",
+    "vision": "4.1.1"
+  }
+}
