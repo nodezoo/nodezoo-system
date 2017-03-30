@@ -1,3 +1,5 @@
+/* Copyright (c) 2017 Richard Rodger and other contributors, MIT License */
+
 var dgram = require('dgram')
 
 

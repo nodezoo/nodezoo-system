@@ -20,6 +20,12 @@
       "max": 1,
       "weight": weights.test * (1/services.length)
     })
+    inputs.push({
+      "name": "service.validate."+service,
+      "min": 0,
+      "max": 1,
+      "weight": weights.test * (1/services.length)
+    })
   })
 
   return {

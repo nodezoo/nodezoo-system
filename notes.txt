@@ -25,6 +25,14 @@ $ docker service create --name search --network nodezoo --env ELASTIC=elastic no
 $ docker service create --name suggest --network nodezoo nodezoo-suggest
 $ docker service create --name info --network nodezoo nodezoo-info
 $ docker service create --name npm --network nodezoo nodezoo-npm
+$ docker service create --name github --network nodezoo nodezoo-github
+$ docker service create --name repl --network nodezoo --publish 9000:9000 --publish 10000:10000 nodezoo-repl
+$ docker service create --name validate --network nodezoo --publish 11000:11000 --env SYSTEM_HOST=repl --env STATS_HOST=stats nodezoo-validate
+
 
 $ docker service create --name elastic --network nodezoo --env xpack.security.enabled=false docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+
+$ docker service create --name stats --network nodezoo --publish 8100:80 --publish 2003-2004:2003-2004 --publish 2023-2024:2023-2024 --publish 8125:8125/udp  --publish 8126:8126  nodezoo-graphite-statsd
+
+$ curl 'http://localhost:11000/act?role=validate&cmd=validate'
 
