@@ -11,3 +11,20 @@ docker run -d --restart=always -p 8100:80 -p 2003-2004:2003-2004 -p 2023-2024:20
 docker run -d -p 9200:9200 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:5.2.2
 
 
+
+
+# stage
+
+# need swarm for overlay network
+$ docker swarm init
+$ docker network create --driver overlay nodezoo 
+$ docker network ls
+
+$ docker service create --name web --network nodezoo --publish 8000:8000 nodezoo-web
+$ docker service create --name search --network nodezoo --env ELASTIC=elastic nodezoo-search
+$ docker service create --name suggest --network nodezoo nodezoo-suggest
+$ docker service create --name info --network nodezoo nodezoo-info
+$ docker service create --name npm --network nodezoo nodezoo-npm
+
+$ docker service create --name elastic --network nodezoo --env xpack.security.enabled=false docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+
