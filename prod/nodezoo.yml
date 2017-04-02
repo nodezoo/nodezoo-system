@@ -1,0 +1,212 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: web
+spec:
+  ports:
+    - name: web
+      port: 8000
+      targetPort: 8000
+  selector:
+    srv: web
+  type: NodePort
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: repl
+spec:
+  ports:
+    - name: repl
+      port: 10000
+      targetPort: 10000
+  selector:
+    srv: repl
+  type: NodePort
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: elastic
+spec:
+  ports:
+    - name: elastic
+      port: 9200
+      targetPort: 9200
+  selector:
+    srv: elastic
+  type: NodePort
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: repl
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: repl
+    spec:
+      containers:
+      - name: repl
+        image: nodezoo-repl-prod:1
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: web
+    spec:
+      containers:
+      - name: web
+        image: nodezoo-web-prod:1
+        env:
+        - name: BASES
+          value: "172.17.0.6:39000"
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: search
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: search
+    spec:
+      containers:
+      - name: search
+        image: nodezoo-search-prod:1
+        env:
+        - name: BASES
+          value: "172.17.0.6:39000"
+---
+
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: suggest
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: suggest
+    spec:
+      containers:
+      - name: suggest
+        image: nodezoo-suggest-prod:1
+        env:
+        - name: BASES
+          value: "172.17.0.6:39000"
+---
+
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: info
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: info
+    spec:
+      containers:
+      - name: info
+        image: nodezoo-info-prod:1
+        env:
+        - name: BASES
+          value: "172.17.0.6:39000"
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: npm
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: npm
+    spec:
+      containers:
+      - name: npm
+        image: nodezoo-npm-prod:1
+        env:
+        - name: BASES
+          value: "172.17.0.6:39000"
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: github
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: github
+    spec:
+      containers:
+      - name: github
+        image: nodezoo-github-prod:1
+        env:
+        - name: BASES
+          value: "172.17.0.6:39000"
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: validate
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: validate
+    spec:
+      containers:
+      - name: validate
+        image: nodezoo-validate-prod:1
+        env:
+        - name: BASES
+          value: "172.17.0.6:39000"
+---
+
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: elastic
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: elastic
+    spec:
+      containers:
+      - name: elastic
+        image: docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+        env:
+        - name: "XPACK_SECURITY_ENABLED"
+          value: "false"        
+

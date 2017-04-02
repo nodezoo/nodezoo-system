@@ -14,6 +14,8 @@
     "seneca-jsonfile-store": "1.0.0",
     "seneca-redis-transport": "0.3.0",
     "seneca-repl": "1.0.0",
+    "seneca-mesh": "0.10.0",
+    "seneca-balance-client": "0.6.0",
     "trie-prefix-tree": "1.3.0",
     "vision": "4.1.1",
     "wreck": "10.0.0",

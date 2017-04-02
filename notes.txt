@@ -39,3 +39,7 @@ $ curl 'http://localhost:11000/act?role=validate&cmd=validate'
 $ docker service create --name redis --network nodezoo --publish 6379:6379 redis
 
 
+
+
+# kubernetes
+
