@@ -1,5 +1,114 @@
+
 version: '3'
 
 networks:
   nodezoo:
     driver: overlay
+
+services:
+  web:
+    image: nodezoo-web:1
+    ports:
+      - "8000:8000"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  search:
+    image: nodezoo-search:1
+    environment:
+      ELASTIC: "elastic"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  suggest:
+    image: nodezoo-suggest:1
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  info:
+    image: nodezoo-info:1
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  npm:
+    image: nodezoo-npm:1
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  github:
+    image: nodezoo-github:1
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  repl:
+    image: nodezoo-repl:1
+    ports:
+      - "9000:9000"
+      - "10000:10000"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  validate:
+    image: nodezoo-validate:1
+    ports:
+      - "11000:11000"
+    environment:
+      SYSTEM_HOST: "repl"
+      STATS_HOST: "stats"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+    environment:
+      "xpack.security.enabled": "false" 
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  stats:
+    image: nodezoo-graphite-statsd
+    ports:
+      - "8100:80"
+      - "2003-2004:2003-2004"
+      - "2023-2024:2023-2024" 
+      - "8125:8125/udp"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+       - "9411:9411"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1

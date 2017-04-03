@@ -19,7 +19,9 @@
     "trie-prefix-tree": "1.3.0",
     "vision": "4.1.1",
     "wreck": "10.0.0",
-    "github": "9.2.0"
+    "github": "9.2.0",
+    "seneca-zipkin-tracer": "0.1.0",
+    "seneca-statsd": "0.0.1"
   },
   "devDependencies": {
     "travis-ci": "^2.1.1"
