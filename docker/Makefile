@@ -1,6 +1,7 @@
 build :
 	$(MAKE) -C ./shared build
 	$(MAKE) -C ./stats/graphite-statsd build
+	$(MAKE) -C ./logstash build
 	$(MAKE) -C ../../nodezoo-web/docker/stage build
 	$(MAKE) -C ../../nodezoo-search/docker/stage build
 	$(MAKE) -C ../../nodezoo-suggest/docker/stage build

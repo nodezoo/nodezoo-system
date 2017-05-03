@@ -24,6 +24,7 @@
     "seneca-statsd": "0.0.1"
   },
   "devDependencies": {
+    "percentile": "^1.2.0",
     "travis-ci": "^2.1.1"
   }
 }

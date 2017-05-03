@@ -41,5 +41,13 @@ $ docker service create --name redis --network nodezoo --publish 6379:6379 redis
 $ docker stack deploy -c prod/nodezoo.yml nodezoo
 
 
+
+
+
+docker service create --name nodezoo_web --network nodezoo_nodezoo --publish 8000:8000 --log-driver syslog --log-opt syslog-address=udp://192.168.0.101:5000 nodezoo-web:1
+
+
+
+
 # kubernetes
 

@@ -84,7 +84,9 @@ services:
       replicas: 1
 
   elastic:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.3.0
+    ports:
+      - "9200:9200"
     environment:
       "xpack.security.enabled": "false" 
     networks:
@@ -108,6 +110,27 @@ services:
     image: openzipkin/zipkin
     ports:
        - "9411:9411"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.3.0
+    environment:
+      - ELASTICSEARCH_URL=http://elastic:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - nodezoo
+    deploy:
+      replicas: 1
+
+  logstash:
+    image: nodezoo-logstash
+    ports:
+      - "5000:5000/udp"
+    command: -f /logstash.conf
     networks:
       - nodezoo
     deploy:
