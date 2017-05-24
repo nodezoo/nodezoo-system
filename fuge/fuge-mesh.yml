@@ -1,0 +1,40 @@
+fuge_global:
+  tail: true
+  monitor_excludes:
+    - '**/node_modules/**'
+    - '**/.git/**'
+    - '**/*.log'
+    - '**/data/**'
+#repl:
+#  type: node
+#  path: ../../nodezoo-repl/srv
+#  run: node repl-dev-mesh.js --seneca.options.legacy.transport=false
+web0:
+  type: node
+  path: ../../nodezoo-web/srv
+  run: node web-dev-mesh.js --seneca.options.legacy.transport=false
+search0:
+  type: node
+  path: ../../nodezoo-search/srv
+  run: node search-dev-mesh.js --seneca.options.legacy.transport=false
+search1:
+  type: node
+  path: ../../nodezoo-search/srv
+  run: node search-dev-mesh.js --seneca.options.legacy.transport=false
+info:
+  type: node
+  path: ../../nodezoo-info/srv
+  run: node info-dev-mesh.js --seneca.options.legacy.transport=false
+npm:
+  type: node
+  path: ../../nodezoo-npm/srv
+  run: node npm-dev-mesh.js --seneca.options.legacy.transport=false
+github:
+  type: node
+  path: ../../nodezoo-github/srv
+  run: node github-dev-mesh.js --seneca.options.legacy.transport=false
+suggest:
+  type: node
+  path: ../../nodezoo-suggest/srv
+  run: node suggest-dev-mesh.js --seneca.options.legacy.transport=false
+
