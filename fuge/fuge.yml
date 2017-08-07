@@ -8,25 +8,25 @@ fuge_global:
 web:
   type: node
   path: ../../nodezoo-web/srv
-  run: node web-dev.js
+  run: node web-dev.js --seneca.options.legacy.transport=false
 search:
   type: node
   path: ../../nodezoo-search/srv
-  run: node search-dev.js
+  run: node search-dev.js --seneca.options.legacy.transport=false
 info:
   type: node
   path: ../../nodezoo-info/srv
-  run: node info-dev.js
+  run: node info-dev.js --seneca.options.legacy.transport=false
 npm:
   type: node
   path: ../../nodezoo-npm/srv
-  run: node npm-dev.js
+  run: node npm-dev.js --seneca.options.legacy.transport=false
 github:
   type: node
   path: ../../nodezoo-github/srv
-  run: node github-dev.js
+  run: node github-dev.js --seneca.options.legacy.transport=false
 suggest:
   type: node
   path: ../../nodezoo-suggest/srv
-  run: node suggest-dev.js
+  run: node suggest-dev.js --seneca.options.legacy.transport=false
 
