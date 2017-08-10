@@ -1,7 +1,7 @@
 {
   "name": "nodezoo-system",
   "version": "1.0.0",
-  "description": "Shared dependencies for NodeZoo services",
+  "description": "Automation and scripts for the nodezoo system.",
   "license": "MIT",
   "scripts": {
     "test": "true"
