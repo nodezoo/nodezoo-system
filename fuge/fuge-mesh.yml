@@ -5,10 +5,10 @@ fuge_global:
     - '**/.git/**'
     - '**/*.log'
     - '**/data/**'
-#repl:
-#  type: node
-#  path: ../../nodezoo-repl/srv
-#  run: node repl-dev-mesh.js --seneca.options.legacy.transport=false
+repl:
+  type: node
+  path: ../../nodezoo-repl/srv
+  run: node repl-dev-mesh.js --seneca.options.legacy.transport=false
 web0:
   type: node
   path: ../../nodezoo-web/srv
