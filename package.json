@@ -1,8 +1,11 @@
 {
   "name": "nodezoo-system",
-  "version": "1.0.0-tms-dev",
+  "version": "1.0.0",
   "description": "Shared dependencies for NodeZoo services",
   "license": "MIT",
+  "scripts": {
+    "test": "true"
+  },
   "dependencies": {
     "chairo": "3.0.0",
     "handlebars": "4.0.6",
