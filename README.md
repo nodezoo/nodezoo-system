@@ -1,6 +1,6 @@
 # The nodezoo microservice demonstration architecture
 
-A repository in the microservice demonstration system for
+This is a repository in the microservice demonstration system for
 the [Tao of Microservices](//bit.ly/rmtaomicro) book (chapter 9). This
 code is live at [nodezoo.com](//nodezoo.com).
 
