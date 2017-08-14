@@ -7,34 +7,34 @@ fuge_global:
     - '**/data/**'
 repl:
   type: node
-  path: ../../nodezoo-repl/srv
+  path: ../../repl/srv
   run: node repl-dev-mesh.js --seneca.options.legacy.transport=false
 web0:
   type: node
-  path: ../../nodezoo-web/srv
+  path: ../../web/srv
   run: node web-dev-mesh.js --seneca.options.legacy.transport=false
 search0:
   type: node
-  path: ../../nodezoo-search/srv
+  path: ../../search/srv
   run: node search-dev-mesh.js --seneca.options.legacy.transport=false
 search1:
   type: node
-  path: ../../nodezoo-search/srv
+  path: ../../search/srv
   run: node search-dev-mesh.js --seneca.options.legacy.transport=false
 info:
   type: node
-  path: ../../nodezoo-info/srv
+  path: ../../info/srv
   run: node info-dev-mesh.js --seneca.options.legacy.transport=false
 npm:
   type: node
-  path: ../../nodezoo-npm/srv
+  path: ../../npm/srv
   run: node npm-dev-mesh.js --seneca.options.legacy.transport=false
 github:
   type: node
-  path: ../../nodezoo-github/srv
+  path: ../../github/srv
   run: node github-dev-mesh.js --seneca.options.legacy.transport=false
 suggest:
   type: node
-  path: ../../nodezoo-suggest/srv
+  path: ../../suggest/srv
   run: node suggest-dev-mesh.js --seneca.options.legacy.transport=false
 

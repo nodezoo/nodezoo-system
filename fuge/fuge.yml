@@ -7,26 +7,26 @@ fuge_global:
     - '**/data/**'
 web:
   type: node
-  path: ../../nodezoo-web/srv
+  path: ../../web/srv
   run: node web-dev.js --seneca.options.legacy.transport=false
 search:
   type: node
-  path: ../../nodezoo-search/srv
+  path: ../../search/srv
   run: node search-dev.js --seneca.options.legacy.transport=false
 info:
   type: node
-  path: ../../nodezoo-info/srv
+  path: ../../info/srv
   run: node info-dev.js --seneca.options.legacy.transport=false
 npm:
   type: node
-  path: ../../nodezoo-npm/srv
+  path: ../../npm/srv
   run: node npm-dev.js --seneca.options.legacy.transport=false
 github:
   type: node
-  path: ../../nodezoo-github/srv
+  path: ../../github/srv
   run: node github-dev.js --seneca.options.legacy.transport=false
 suggest:
   type: node
-  path: ../../nodezoo-suggest/srv
+  path: ../../suggest/srv
   run: node suggest-dev.js --seneca.options.legacy.transport=false
 
