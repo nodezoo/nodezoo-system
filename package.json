@@ -23,8 +23,8 @@
     "vision": "4.1.1",
     "wreck": "10.0.0",
     "github": "9.2.0",
-    "seneca-zipkin-tracer": "0.1.0",
-    "seneca-statsd": "0.0.1"
+    "seneca-zipkin-tracer": "0.2.0",
+    "seneca-statsd": "0.1.0"
   },
   "devDependencies": {
     "fuge": "^2.0.2",

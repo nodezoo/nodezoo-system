@@ -1,29 +1,34 @@
 {
   "name": "nodezoo-system",
-  "version": "1.0.0-tms-dev",
-  "description": "Shared dependencies for NodeZoo services",
+  "version": "1.0.0",
+  "description": "Automation and scripts for the nodezoo system.",
   "license": "MIT",
+  "scripts": {
+    "test": "true"
+  },
   "dependencies": {
     "chairo": "3.0.0",
     "handlebars": "4.0.6",
     "hapi": "16.1.0",
     "inert": "4.1.0",
     "lru-cache": "4.0.2",
-    "seneca": "3.3.0",
-    "seneca-entity": "2.0.0",
-    "seneca-jsonfile-store": "1.0.0",
+    "seneca": "3.4.2",
+    "seneca-entity": "2.0.2",
+    "seneca-jsonfile-store": "1.0.1",
     "seneca-redis-transport": "0.3.0",
-    "seneca-repl": "1.0.0",
-    "seneca-mesh": "0.10.0",
-    "seneca-balance-client": "0.6.0",
+    "seneca-repl": "1.1.2",
+    "seneca-mesh": "0.11.0",
+    "seneca-balance-client": "0.6.1",
     "trie-prefix-tree": "1.3.0",
     "vision": "4.1.1",
     "wreck": "10.0.0",
     "github": "9.2.0",
-    "seneca-zipkin-tracer": "0.1.0",
-    "seneca-statsd": "0.0.1"
+    "seneca-zipkin-tracer": "0.2.0",
+    "seneca-statsd": "0.1.0"
   },
   "devDependencies": {
+    "fuge": "^2.0.2",
+    "percentile": "^1.2.0",
     "travis-ci": "^2.1.1"
   }
 }
