@@ -40,6 +40,20 @@ spec:
   type: NodePort
 ---
 
+kind: Service
+apiVersion: v1
+metadata:
+  name: consul
+spec:
+  ports:
+    - name: consul
+      port: 8500
+      targetPort: 8500
+  selector:
+    srv: consul
+  type: NodePort
+---
+
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -54,6 +68,7 @@ spec:
       containers:
       - name: repl
         image: nodezoo-repl-prod:1
+
 ---
 
 apiVersion: extensions/v1beta1
@@ -89,30 +104,27 @@ spec:
       containers:
       - name: search
         image: nodezoo-search-prod:1
-        env:
-        - name: BASES
-          value: "172.17.0.6:39000"
 ---
 
 
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: suggest
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        srv: suggest
-    spec:
-      containers:
-      - name: suggest
-        image: nodezoo-suggest-prod:1
-        env:
-        - name: BASES
-          value: "172.17.0.6:39000"
----
+# apiVersion: extensions/v1beta1
+# kind: Deployment
+# metadata:
+#   name: suggest
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         srv: suggest
+#     spec:
+#       containers:
+#       - name: suggest
+#         image: nodezoo-suggest-prod:1
+#         env:
+#         - name: BASES
+#           value: "172.17.0.6:39000"
+# ---
 
 
 apiVersion: extensions/v1beta1
@@ -153,43 +165,43 @@ spec:
           value: "172.17.0.6:39000"
 ---
 
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: github
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        srv: github
-    spec:
-      containers:
-      - name: github
-        image: nodezoo-github-prod:1
-        env:
-        - name: BASES
-          value: "172.17.0.6:39000"
----
+# apiVersion: extensions/v1beta1
+# kind: Deployment
+# metadata:
+#   name: github
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         srv: github
+#     spec:
+#       containers:
+#       - name: github
+#         image: nodezoo-github-prod:1
+#         env:
+#         - name: BASES
+#           value: "172.17.0.6:39000"
+# ---
 
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: validate
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        srv: validate
-    spec:
-      containers:
-      - name: validate
-        image: nodezoo-validate-prod:1
-        env:
-        - name: BASES
-          value: "172.17.0.6:39000"
----
+# apiVersion: extensions/v1beta1
+# kind: Deployment
+# metadata:
+#   name: validate
+# spec:
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         srv: validate
+#     spec:
+#       containers:
+#       - name: validate
+#         image: nodezoo-validate-prod:1
+#         env:
+#         - name: BASES
+#           value: "172.17.0.6:39000"
+# ---
 
 
 apiVersion: extensions/v1beta1
@@ -207,6 +219,30 @@ spec:
       - name: elastic
         image: docker.elastic.co/elasticsearch/elasticsearch:5.2.2
         env:
-        - name: "XPACK_SECURITY_ENABLED"
+        - name: "xpack.security.enabled"
           value: "false"        
+      initContainers:
+      - name: init-sysctl
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["sysctl", "-qw", "vm.max_map_count=262144"]
+        securityContext:
+          privileged: true
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: consul
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        srv: consul
+    spec:
+      containers:
+      - name: consul
+        image: consul
 

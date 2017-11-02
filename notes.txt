@@ -51,3 +51,8 @@ docker service create --name nodezoo_web --network nodezoo_nodezoo --publish 800
 
 # kubernetes
 
+minikube start
+
+minikube ssh
+
+
